@@ -12,6 +12,7 @@ const Navigation = () => {
     { path: '/conceitos', label: 'Conceitos' },
     { path: '/angulos-notaveis', label: 'Ângulos Notáveis' },
     { path: '/identidades', label: 'Identidades' },
+    { path: '/exercicios', label: 'Exercícios' },
     { path: '/aplicacoes', label: 'Aplicações' },
   ];
 
