@@ -7,6 +7,7 @@ import Navigation from "./components/Navigation";
 import Home from "./pages/Home";
 import Historia from "./pages/Historia";
 import Conceitos from "./pages/Conceitos";
+import AngulosNotaveis from "./pages/AngulosNotaveis";
 import Identidades from "./pages/Identidades";
 import Exercicios from "./pages/Exercicios";
 import NotFound from "./pages/NotFound";
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/" element={<Home />} />
           <Route path="/historia" element={<Historia />} />
           <Route path="/conceitos" element={<Conceitos />} />
+          <Route path="/angulos-notaveis" element={<AngulosNotaveis />} />
           <Route path="/identidades" element={<Identidades />} />
           <Route path="/exercicios" element={<Exercicios />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
