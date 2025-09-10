@@ -1,56 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Calculator, Circle } from "lucide-react";
-import angulo1 from "@/assets/angulo1.jpg";
-import angulo2 from "@/assets/angulo2.jpg";
-import angulo3 from "@/assets/angulo3.jpg";
-import angulo4 from "@/assets/angulo4.jpg";
-import angulo5 from "@/assets/angulo5.jpg";
-import angulo6 from "@/assets/angulo6.jpg";
-import angulo7 from "@/assets/angulo7.jpg";
-import angulo8 from "@/assets/angulo8.jpg";
 const AngulosNotaveis = () => {
-  const angulosData = [{
-    titulo: "Círculo Trigonométrico",
-    descricao: "Ângulos fundamentais no círculo unitário",
-    imagem: angulo1,
-    conceitos: ["0°", "30°", "45°", "60°", "90°"]
-  }, {
-    titulo: "Tabela de Valores",
-    descricao: "Valores exatos das funções trigonométricas",
-    imagem: angulo2,
-    conceitos: ["sen", "cos", "tg"]
-  }, {
-    titulo: "Ângulos Especiais",
-    descricao: "Demonstração geométrica dos ângulos notáveis",
-    imagem: angulo3,
-    conceitos: ["Triângulo 30-60-90", "Triângulo 45-45-90"]
-  }, {
-    titulo: "Quadrantes",
-    descricao: "Sinais das funções por quadrante",
-    imagem: angulo4,
-    conceitos: ["I Quadrante", "II Quadrante", "III Quadrante", "IV Quadrante"]
-  }, {
-    titulo: "Valores Complementares",
-    descricao: "Relações entre ângulos complementares",
-    imagem: angulo5,
-    conceitos: ["90° - θ", "Cofunções"]
-  }, {
-    titulo: "Ângulos Suplementares",
-    descricao: "Propriedades dos ângulos suplementares",
-    imagem: angulo6,
-    conceitos: ["180° - θ", "Simetria"]
-  }, {
-    titulo: "Resumo Completo",
-    descricao: "Compilação de todos os ângulos notáveis",
-    imagem: angulo7,
-    conceitos: ["Resumo", "Referência Rápida"]
-  }, {
-    titulo: "Círculo Trigonométrico Completo",
-    descricao: "Visualização completa do círculo trigonométrico com todos os ângulos",
-    imagem: angulo8,
-    conceitos: ["360°", "Ciclo Completo", "Periodicidade"]
-  }];
   const tabelaValores = [{
     angulo: "0°",
     radianos: "0",
@@ -136,37 +87,6 @@ const AngulosNotaveis = () => {
           </Card>
         </div>
 
-        {/* Grid de Imagens */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {angulosData.map((item, index) => (
-            <div key={index} className="animate-slide-up" style={{animationDelay: `${0.2 + index * 0.1}s`}}>
-              <Card className="math-card group hover:shadow-lg hover:shadow-primary/20 transition-all duration-300">
-                <CardHeader>
-                  <CardTitle className="text-xl text-primary group-hover:text-primary/80 transition-colors">
-                    {item.titulo}
-                  </CardTitle>
-                  <p className="text-muted-foreground">{item.descricao}</p>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="aspect-square overflow-hidden rounded-lg border border-border">
-                    <img 
-                      src={item.imagem} 
-                      alt={item.titulo}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    {item.conceitos.map((conceito, i) => (
-                      <Badge key={i} variant="secondary" className="text-xs">
-                        {conceito}
-                      </Badge>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          ))}
-        </div>
 
         {/* Sinais das Funções Trigonométricas */}
         <div className="mt-12 animate-slide-up" style={{
