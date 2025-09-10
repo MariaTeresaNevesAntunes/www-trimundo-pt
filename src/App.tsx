@@ -10,6 +10,7 @@ import Conceitos from "./pages/Conceitos";
 import AngulosNotaveis from "./pages/AngulosNotaveis";
 import Identidades from "./pages/Identidades";
 import Exercicios from "./pages/Exercicios";
+import Aplicacoes from "./pages/Aplicacoes";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/angulos-notaveis" element={<AngulosNotaveis />} />
           <Route path="/identidades" element={<Identidades />} />
           <Route path="/exercicios" element={<Exercicios />} />
+          <Route path="/aplicacoes" element={<Aplicacoes />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
