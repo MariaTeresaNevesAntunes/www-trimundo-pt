@@ -8,6 +8,7 @@ import angulo4 from "@/assets/angulo4.jpg";
 import angulo5 from "@/assets/angulo5.jpg";
 import angulo6 from "@/assets/angulo6.jpg";
 import angulo7 from "@/assets/angulo7.jpg";
+import angulo8 from "@/assets/angulo8.jpg";
 const AngulosNotaveis = () => {
   const angulosData = [{
     titulo: "Círculo Trigonométrico",
@@ -44,6 +45,11 @@ const AngulosNotaveis = () => {
     descricao: "Compilação de todos os ângulos notáveis",
     imagem: angulo7,
     conceitos: ["Resumo", "Referência Rápida"]
+  }, {
+    titulo: "Círculo Trigonométrico Completo",
+    descricao: "Visualização completa do círculo trigonométrico com todos os ângulos",
+    imagem: angulo8,
+    conceitos: ["360°", "Ciclo Completo", "Periodicidade"]
   }];
   const tabelaValores = [{
     angulo: "0°",
@@ -132,7 +138,34 @@ const AngulosNotaveis = () => {
 
         {/* Grid de Imagens */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {angulosData.map((item, index) => {})}
+          {angulosData.map((item, index) => (
+            <div key={index} className="animate-slide-up" style={{animationDelay: `${0.2 + index * 0.1}s`}}>
+              <Card className="math-card group hover:shadow-lg hover:shadow-primary/20 transition-all duration-300">
+                <CardHeader>
+                  <CardTitle className="text-xl text-primary group-hover:text-primary/80 transition-colors">
+                    {item.titulo}
+                  </CardTitle>
+                  <p className="text-muted-foreground">{item.descricao}</p>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="aspect-square overflow-hidden rounded-lg border border-border">
+                    <img 
+                      src={item.imagem} 
+                      alt={item.titulo}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {item.conceitos.map((conceito, i) => (
+                      <Badge key={i} variant="secondary" className="text-xs">
+                        {conceito}
+                      </Badge>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          ))}
         </div>
 
         {/* Sinais das Funções Trigonométricas */}
