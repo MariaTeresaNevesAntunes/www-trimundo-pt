@@ -48,6 +48,19 @@ const Conceitos = () => {
           <div className="bg-math-blue/5 rounded-xl p-6 border border-math-blue/20">
             <h4 className="text-xl font-semibold mb-4 text-math-blue">Círculo Trigonométrico</h4>
             <p className="text-muted-foreground leading-relaxed mb-4">
+              O Círculo Trigonométrico, também chamado de Ciclo ou Circunferência Trigonométrica, é uma 
+              representação gráfica que auxilia no cálculo das razões trigonométricas.
+            </p>
+            
+            <div className="flex justify-center mb-6">
+              <img 
+                src="/lovable-uploads/fcb8dd65-eb51-481c-9675-5c6e048617c9.png" 
+                alt="Círculo Trigonométrico mostrando seno, cosseno, tangente, cotangente, secante e cossecante"
+                className="max-w-full h-auto rounded-lg shadow-md"
+              />
+            </div>
+            
+            <p className="text-muted-foreground leading-relaxed mb-4">
               Num círculo de raio 1 centrado na origem, qualquer ponto (x,y) pode ser expresso como:
             </p>
             <div className="space-y-3">
