@@ -116,10 +116,11 @@ const Exercicios = () => {
       <div className="container mx-auto px-4 max-w-4xl">
         {/* Header */}
         <div className="text-center mb-12 animate-slide-up">
-          <div className="flex items-center justify-center gap-3 mb-4">
+          <div className="flex items-center justify-center gap-4 mb-6">
             <Calculator className="w-12 h-12 text-primary animate-pulse-soft" />
-            <h1 className="heading-xl text-gradient">Exercícios de Trigonometria</h1>
+            <h1 className="heading-xl text-gradient">Exercícios de</h1>
           </div>
+          <h2 className="heading-xl text-gradient mb-6">Trigonometria</h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Pratique seus conhecimentos com exercícios sobre Lei dos Cossenos e funções trigonométricas
           </p>
