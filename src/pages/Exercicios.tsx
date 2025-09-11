@@ -177,7 +177,7 @@ const Exercicios = () => {
               <CardContent className="space-y-4">
                 {exercise.hint && (
                   <div className="p-3 bg-muted/50 rounded-lg border-l-4 border-primary/50">
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-sm text-foreground">
                       <strong>Dica:</strong> {exercise.hint}
                     </p>
                   </div>
