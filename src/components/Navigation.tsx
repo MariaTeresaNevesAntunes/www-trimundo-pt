@@ -25,7 +25,7 @@ const Navigation = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 font-bold text-xl text-gradient">
             <Calculator className="w-8 h-8 text-primary animate-pulse-soft" />
-            TriMundo
+            Tri Mundo
           </Link>
 
           {/* Desktop Navigation */}
