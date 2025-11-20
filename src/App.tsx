@@ -12,6 +12,7 @@ import AngulosNotaveis from "./pages/AngulosNotaveis";
 import Identidades from "./pages/Identidades";
 import Exercicios from "./pages/Exercicios";
 import Aplicacoes from "./pages/Aplicacoes";
+import PoliticaPrivacidade from "./pages/PoliticaPrivacidade";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -31,6 +32,7 @@ const App = () => (
           <Route path="/identidades" element={<Identidades />} />
           <Route path="/exercicios" element={<Exercicios />} />
           <Route path="/aplicacoes" element={<Aplicacoes />} />
+          <Route path="/politica-privacidade" element={<PoliticaPrivacidade />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
