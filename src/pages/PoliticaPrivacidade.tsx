@@ -121,6 +121,7 @@ const PoliticaPrivacidade = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

@@ -1,8 +1,25 @@
 import { useState } from 'react';
 import { Triangle, Circle, Calculator, Eye, ArrowRight } from 'lucide-react';
+import SEO from '@/components/SEO';
 
 const Conceitos = () => {
   const [selectedConcept, setSelectedConcept] = useState('triangulo');
+
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Conceitos Fundamentais de Trigonometria",
+    "description": "Aprende os conceitos básicos: seno, cosseno, tangente e o círculo unitário"
+  };
+
+  return (
+    <>
+      <SEO
+        title="Conceitos Fundamentais de Trigonometria"
+        description="Aprende os conceitos fundamentais de trigonometria: seno, cosseno, tangente, círculo unitário e relações trigonométricas."
+        structuredData={structuredData}
+      />
+      <main className="min-h-screen bg-gradient-subtle pt-24 pb-12">
 
   const concepts = {
     triangulo: {

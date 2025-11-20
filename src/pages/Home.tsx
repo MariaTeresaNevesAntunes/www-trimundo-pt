@@ -1,5 +1,6 @@
 import Hero from '@/components/Hero';
 import ConceptCard from '@/components/ConceptCard';
+import SEO from '@/components/SEO';
 import { 
   History, 
   Calculator, 
@@ -12,12 +13,28 @@ import {
 } from 'lucide-react';
 
 const Home = () => {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "TriMundo",
+    "description": "Plataforma educativa interativa para aprender trigonometria de forma visual e contextualizada",
+    "url": "https://lovable.app",
+    "educationalProgramMode": "online"
+  };
+
   return (
-    <div className="min-h-screen">
-      <Hero />
-      
-      {/* Features Section */}
-      <section className="py-20 section-gradient">
+    <>
+      <SEO
+        title="Descobre a Trigonometria no Mundo Real"
+        description="Aprende trigonometria de forma interativa e visual. História, conceitos fundamentais, ângulos notáveis e aplicações no mundo real."
+        structuredData={structuredData}
+      />
+      <div className="min-h-screen">
+        <Hero />
+        
+        {/* Features Section */}
+        <main>
+          <section className="py-20 section-gradient">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="heading-lg text-gradient mb-4">
@@ -140,8 +157,10 @@ const Home = () => {
             </footer>
           </blockquote>
         </div>
-      </section>
-    </div>
+          </section>
+        </main>
+      </div>
+    </>
   );
 };
 
