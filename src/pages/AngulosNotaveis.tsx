@@ -1,7 +1,15 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Calculator, Circle } from "lucide-react";
+import SEO from '@/components/SEO';
+
 const AngulosNotaveis = () => {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Ângulos Notáveis em Trigonometria",
+    "description": "Valores de seno, cosseno e tangente para os ângulos notáveis: 0°, 30°, 45°, 60°, 90°"
+  };
   const tabelaValores = [{
     angulo: "0°",
     radianos: "0",
@@ -33,10 +41,12 @@ const AngulosNotaveis = () => {
     cos: "0",
     tg: "∞"
   }];
-  return <div className="min-h-screen bg-gradient-to-br from-background to-muted/20">
+  return <>
+      <SEO title="Ângulos Notáveis" description="Aprende os valores exatos das funções trigonométricas para os ângulos notáveis: 0°, 30°, 45°, 60° e 90°." structuredData={structuredData} />
+      <main className="min-h-screen bg-gradient-to-br from-background to-muted/20">
       <div className="container mx-auto px-4 py-8">
         {/* Header */}
-        <div className="text-center mb-12 animate-slide-up">
+        <header className="text-center mb-12 animate-slide-up">
           <div className="flex items-center justify-center gap-3 mb-4">
             <Circle className="w-8 h-8 text-primary animate-pulse-soft" />
             <h1 className="text-4xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
@@ -47,7 +57,7 @@ const AngulosNotaveis = () => {
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Explore os ângulos fundamentais da trigonometria e suas propriedades especiais
           </p>
-        </div>
+        </header>
 
         {/* Tabela de Valores Exatos */}
         <div className="mb-12 animate-slide-up" style={{
@@ -250,6 +260,7 @@ const AngulosNotaveis = () => {
           </Card>
         </div>
       </div>
-    </div>;
+    </main>
+    </>;
 };
 export default AngulosNotaveis;

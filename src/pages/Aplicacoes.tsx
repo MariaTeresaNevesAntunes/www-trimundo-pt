@@ -1,8 +1,15 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Building2, Navigation, Atom, Stethoscope, Ruler, MapPin } from "lucide-react";
+import SEO from '@/components/SEO';
 
 const Aplicacoes = () => {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Aplicações Práticas da Trigonometria",
+    "description": "Descobre como a trigonometria é aplicada em engenharia, arquitetura, navegação, física e medicina"
+  };
   const aplicacoesData = [
     {
       categoria: "Construção e Design",
@@ -87,9 +94,15 @@ const Aplicacoes = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
-      {/* Hero Section */}
-      <section className="py-20 hero-gradient">
+    <>
+      <SEO
+        title="Aplicações Práticas da Trigonometria"
+        description="Descobre como a trigonometria é aplicada em engenharia civil, arquitetura, navegação, astronomia, física e medicina."
+        structuredData={structuredData}
+      />
+      <div className="min-h-screen bg-background">
+        {/* Hero Section */}
+        <header className="py-20 hero-gradient">
         <div className="container mx-auto px-4 text-center">
           <h1 className="heading-xl text-white mb-6">
             Aplicações <span className="text-accent-light">Práticas</span>
@@ -217,7 +230,9 @@ const Aplicacoes = () => {
           </div>
         </div>
       </section>
+      </main>
     </div>
+    </>
   );
 };
 

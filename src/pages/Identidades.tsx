@@ -1,8 +1,22 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import SEO from '@/components/SEO';
 
 const Identidades = () => {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Identidades Trigonométricas Fundamentais",
+    "description": "Identidades fundamentais, de quociente, recíprocas, pitagóricas e de ângulo duplo"
+  };
+
   return (
-    <main className="min-h-screen bg-gradient-subtle pt-24 pb-12">
+    <>
+      <SEO
+        title="Identidades Trigonométricas"
+        description="Descobre as identidades trigonométricas fundamentais: identidade pitagórica, quociente, recíprocas e ângulo duplo."
+        structuredData={structuredData}
+      />
+      <main className="min-h-screen bg-gradient-subtle pt-24 pb-12">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 animate-fade-in">
           <h1 className="heading-xl mb-4 gradient-text">
@@ -195,6 +209,7 @@ const Identidades = () => {
         </div>
       </div>
     </main>
+    </>
   );
 };
 

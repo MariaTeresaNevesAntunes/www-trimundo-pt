@@ -1,6 +1,14 @@
 import { Clock, MapPin, Star, Compass, Calculator, Globe } from 'lucide-react';
+import SEO from '@/components/SEO';
 
 const Historia = () => {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "História da Trigonometria: 3000 Anos de Evolução",
+    "description": "Descobre a evolução da trigonometria desde os babilónios até à era moderna",
+    "articleBody": "Uma jornada fascinante através dos milénios, desde as primeiras observações astronómicas até às aplicações modernas."
+  };
   const timelineEvents = [
     {
       period: "2000 a.C.",
@@ -47,9 +55,15 @@ const Historia = () => {
   };
 
   return (
-    <div className="min-h-screen pt-20">
-      {/* Hero Section */}
-      <section className="py-20 hero-gradient">
+    <>
+      <SEO
+        title="História da Trigonometria"
+        description="Descobre a fascinante evolução da trigonometria desde os babilónios até à era moderna. 3000 anos de história e descobertas."
+        structuredData={structuredData}
+      />
+      <div className="min-h-screen pt-20">
+        {/* Hero Section */}
+        <header className="py-20 hero-gradient">
         <div className="container mx-auto px-4 text-center">
           <h1 className="heading-xl text-white mb-6">
             História da <span className="text-accent-light">Trigonometria</span>
@@ -59,10 +73,11 @@ const Historia = () => {
             observações astronómicas até às aplicações modernas que moldam o nosso mundo.
           </p>
         </div>
-      </section>
+      </header>
 
       {/* Timeline Section */}
-      <section className="py-20">
+      <main>
+        <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             {timelineEvents.map((event, index) => (
@@ -170,7 +185,9 @@ const Historia = () => {
           </blockquote>
         </div>
       </section>
+      </main>
     </div>
+    </>
   );
 };
 
