@@ -101,8 +101,8 @@ const Aplicacoes = () => {
         structuredData={structuredData}
       />
       <div className="min-h-screen bg-background">
-        {/* Hero Section */}
-        <header className="py-20 hero-gradient">
+      {/* Hero Section */}
+      <header className="py-20 hero-gradient">
         <div className="container mx-auto px-4 text-center">
           <h1 className="heading-xl text-white mb-6">
             Aplicações <span className="text-accent-light">Práticas</span>
@@ -111,7 +111,7 @@ const Aplicacoes = () => {
             A trigonometria tem aplicações práticas e cruciais em diversas áreas, moldando o mundo moderno através de cálculos precisos e análises fundamentais.
           </p>
         </div>
-      </section>
+      </header>
 
       {/* Main Applications */}
       <section className="py-20">
@@ -230,7 +230,6 @@ const Aplicacoes = () => {
           </div>
         </div>
       </section>
-      </main>
     </div>
     </>
   );
