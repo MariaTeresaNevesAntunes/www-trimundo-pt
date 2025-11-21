@@ -12,15 +12,6 @@ const Conceitos = () => {
     "description": "Aprende os conceitos básicos: seno, cosseno, tangente e o círculo unitário"
   };
 
-  return (
-    <>
-      <SEO
-        title="Conceitos Fundamentais de Trigonometria"
-        description="Aprende os conceitos fundamentais de trigonometria: seno, cosseno, tangente, círculo unitário e relações trigonométricas."
-        structuredData={structuredData}
-      />
-      <main className="min-h-screen bg-gradient-subtle pt-24 pb-12">
-
   const concepts = {
     triangulo: {
       title: 'Triângulo Retângulo',
@@ -166,7 +157,13 @@ const Conceitos = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-20">
+    <>
+      <SEO
+        title="Conceitos Fundamentais de Trigonometria"
+        description="Aprende os conceitos fundamentais de trigonometria: seno, cosseno, tangente, círculo unitário e relações trigonométricas."
+        structuredData={structuredData}
+      />
+      <div className="min-h-screen pt-20">
       {/* Hero Section */}
       <section className="py-20 hero-gradient">
         <div className="container mx-auto px-4 text-center">
@@ -265,7 +262,8 @@ const Conceitos = () => {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 };
 
