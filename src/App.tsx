@@ -12,6 +12,7 @@ import Conceitos from "./pages/Conceitos";
 import AngulosNotaveis from "./pages/AngulosNotaveis";
 import Identidades from "./pages/Identidades";
 import Exercicios from "./pages/Exercicios";
+import LimitesTrigonometricos from "./pages/LimitesTrigonometricos";
 import Aplicacoes from "./pages/Aplicacoes";
 import PoliticaPrivacidade from "./pages/PoliticaPrivacidade";
 import NotFound from "./pages/NotFound";
@@ -33,6 +34,7 @@ const App = () => (
           <Route path="/angulos-notaveis" element={<AngulosNotaveis />} />
           <Route path="/identidades" element={<Identidades />} />
           <Route path="/exercicios" element={<Exercicios />} />
+          <Route path="/limites-trigonometricos" element={<LimitesTrigonometricos />} />
           <Route path="/aplicacoes" element={<Aplicacoes />} />
           <Route path="/politica-privacidade" element={<PoliticaPrivacidade />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
