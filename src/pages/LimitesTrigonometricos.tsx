@@ -67,12 +67,12 @@ const LimitesTrigonometricos = () => {
   ];
 
   const LimitNotation = ({ expressao }: { expressao: string }) => (
-    <span className="inline-flex items-center gap-2 font-mono whitespace-nowrap">
-      <span className="inline-flex flex-col items-center leading-tight text-lg">
-        <span>lim</span>
-        <span className="text-xs">x→0</span>
+    <span className="inline-flex items-start gap-2 font-mono whitespace-nowrap">
+      <span className="inline-flex flex-col items-center leading-none">
+        <span className="text-lg">lim</span>
+        <span className="text-xs text-muted-foreground">x→0</span>
       </span>
-      <span className="text-foreground">{expressao}</span>
+      <span className="text-foreground text-lg">{expressao}</span>
     </span>
   );
 
