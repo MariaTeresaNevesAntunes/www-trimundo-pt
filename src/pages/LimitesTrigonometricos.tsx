@@ -76,6 +76,25 @@ const LimitesTrigonometricos = () => {
     </span>
   );
 
+  const LimSymbol = () => (
+    <span className="inline-flex flex-col items-center leading-none mx-1 font-mono">
+      <span>lim</span>
+      <span className="text-xs text-muted-foreground">x→0</span>
+    </span>
+  );
+
+  const renderPasso = (passo: string) => {
+    const parts = passo.split(/\blim\b/);
+    if (parts.length === 1) return passo;
+    
+    return parts.map((part, index) => (
+      <span key={index}>
+        {index > 0 && <LimSymbol />}
+        {part}
+      </span>
+    ));
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
       <SEO 
@@ -225,7 +244,7 @@ const LimitesTrigonometricos = () => {
                       {exercicio.passos.map((passo, passoIndex) => (
                         <div key={passoIndex} className="flex items-start gap-3 ml-4">
                           <span className="text-primary font-bold mt-1">→</span>
-                          <p className="text-foreground">{passo}</p>
+                          <p className="text-foreground flex flex-wrap items-start">{renderPasso(passo)}</p>
                         </div>
                       ))}
                     </div>
