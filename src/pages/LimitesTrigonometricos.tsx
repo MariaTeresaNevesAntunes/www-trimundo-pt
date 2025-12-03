@@ -6,47 +6,47 @@ const LimitesTrigonometricos = () => {
   const exerciciosResolvidos = [
     {
       id: 1,
-      enunciado: "Calcular: lim(x→0) [sin(x) / x]",
+      expressao: "[sin(x) / x]",
       passos: [
         "Este é um limite fundamental da trigonometria",
         "Substituição direta resulta em 0/0 (indeterminação)",
-        "Usando o limite fundamental: lim(x→0) [sin(x) / x] = 1",
+        "Usando o limite fundamental: lim [sin(x) / x] = 1",
         "Resultado: 1"
       ],
       resultado: "1"
     },
     {
       id: 2,
-      enunciado: "Calcular: lim(x→0) [(1 - cos(x)) / x]",
+      expressao: "[(1 - cos(x)) / x]",
       passos: [
         "Substituição direta: (1-1)/0 = 0/0 (indeterminação)",
         "Multiplicamos por (1 + cos(x))/(1 + cos(x))",
-        "= lim(x→0) [(1 - cos²(x)) / (x(1 + cos(x)))]",
-        "= lim(x→0) [sin²(x) / (x(1 + cos(x)))]",
-        "= lim(x→0) [sin(x)/x · sin(x)/(1 + cos(x))]",
+        "= lim [(1 - cos²(x)) / (x(1 + cos(x)))]",
+        "= lim [sin²(x) / (x(1 + cos(x)))]",
+        "= lim [sin(x)/x · sin(x)/(1 + cos(x))]",
         "= 1 · 0/(1+1) = 0"
       ],
       resultado: "0"
     },
     {
       id: 3,
-      enunciado: "Calcular: lim(x→0) [tan(x) / x]",
+      expressao: "[tan(x) / x]",
       passos: [
         "Sabemos que tan(x) = sin(x)/cos(x)",
-        "Então: lim(x→0) [tan(x) / x] = lim(x→0) [sin(x) / (x·cos(x))]",
-        "= lim(x→0) [(sin(x)/x) · (1/cos(x))]",
-        "= lim(x→0) [sin(x)/x] · lim(x→0) [1/cos(x)]",
+        "Então: lim [tan(x) / x] = lim [sin(x) / (x·cos(x))]",
+        "= lim [(sin(x)/x) · (1/cos(x))]",
+        "= lim [sin(x)/x] · lim [1/cos(x)]",
         "= 1 · 1/1 = 1"
       ],
       resultado: "1"
     },
     {
       id: 4,
-      enunciado: "Calcular: lim(x→0) [sin(3x) / sin(5x)]",
+      expressao: "[sin(3x) / sin(5x)]",
       passos: [
         "Multiplicamos e dividimos estrategicamente:",
-        "= lim(x→0) [(sin(3x)/3x) · (3x) · (5x/sin(5x)) · (1/5x)]",
-        "= lim(x→0) [(sin(3x)/3x) · (5x/sin(5x)) · (3x/5x)]",
+        "= lim [(sin(3x)/3x) · (3x) · (5x/sin(5x)) · (1/5x)]",
+        "= lim [(sin(3x)/3x) · (5x/sin(5x)) · (3x/5x)]",
         "Usando o limite fundamental em cada termo:",
         "= 1 · 1 · (3/5) = 3/5"
       ],
@@ -54,17 +54,27 @@ const LimitesTrigonometricos = () => {
     },
     {
       id: 5,
-      enunciado: "Calcular: lim(x→0) [(1 - cos(2x)) / x²]",
+      expressao: "[(1 - cos(2x)) / x²]",
       passos: [
         "Usamos a identidade: 1 - cos(2x) = 2sin²(x)",
-        "= lim(x→0) [2sin²(x) / x²]",
-        "= 2 · lim(x→0) [(sin(x)/x)²]",
-        "= 2 · [lim(x→0) (sin(x)/x)]²",
+        "= lim [2sin²(x) / x²]",
+        "= 2 · lim [(sin(x)/x)²]",
+        "= 2 · [lim (sin(x)/x)]²",
         "= 2 · 1² = 2"
       ],
       resultado: "2"
     }
   ];
+
+  const LimitNotation = ({ expressao }: { expressao: string }) => (
+    <span className="inline-flex items-center gap-1 font-mono">
+      <span className="flex flex-col items-center leading-tight text-lg">
+        <span>lim</span>
+        <span className="text-xs">x→0</span>
+      </span>
+      <span>{expressao}</span>
+    </span>
+  );
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
@@ -205,7 +215,10 @@ const LimitesTrigonometricos = () => {
                     {index + 1}
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-semibold mb-4 text-foreground">{exercicio.enunciado}</h3>
+                    <h3 className="text-xl font-semibold mb-4 text-foreground flex items-center gap-2">
+                      <span>Calcular:</span>
+                      <LimitNotation expressao={exercicio.expressao} />
+                    </h3>
                     
                     <div className="space-y-3 mb-4">
                       <p className="font-semibold text-muted-foreground">Resolução:</p>
