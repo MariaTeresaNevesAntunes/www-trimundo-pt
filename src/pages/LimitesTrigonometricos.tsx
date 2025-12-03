@@ -67,12 +67,12 @@ const LimitesTrigonometricos = () => {
   ];
 
   const LimitNotation = ({ expressao }: { expressao: string }) => (
-    <span className="inline-flex items-center gap-1 font-mono">
-      <span className="flex flex-col items-center leading-tight text-lg">
+    <span className="inline-flex items-center gap-2 font-mono whitespace-nowrap">
+      <span className="inline-flex flex-col items-center leading-tight text-lg">
         <span>lim</span>
         <span className="text-xs">x→0</span>
       </span>
-      <span>{expressao}</span>
+      <span className="text-foreground">{expressao}</span>
     </span>
   );
 
@@ -215,7 +215,7 @@ const LimitesTrigonometricos = () => {
                     {index + 1}
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-semibold mb-4 text-foreground flex items-center gap-2">
+                    <h3 className="text-xl font-semibold mb-4 text-foreground flex flex-wrap items-center gap-2">
                       <span>Calcular:</span>
                       <LimitNotation expressao={exercicio.expressao} />
                     </h3>
