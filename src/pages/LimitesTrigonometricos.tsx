@@ -143,10 +143,10 @@ const LimitesTrigonometricos = () => {
             <div className="p-6 bg-muted/50 rounded-lg border-l-4 border-primary">
               <h3 className="text-xl font-semibold mb-3 text-foreground">1. Limite Fundamental</h3>
               <div className="text-center py-4 bg-background rounded-md mb-3">
-                <p className="text-2xl font-mono flex items-center justify-center gap-2">
-                  <span className="flex flex-col items-center leading-tight">
+                <p className="text-2xl font-mono inline-flex items-start justify-center gap-2">
+                  <span className="inline-flex flex-col items-center leading-none">
                     <span>lim</span>
-                    <span className="text-xs">x→0</span>
+                    <span className="text-xs text-muted-foreground">x→0</span>
                   </span>
                   <span className="text-primary font-bold">[sin(x) / x] = 1</span>
                 </p>
@@ -159,10 +159,10 @@ const LimitesTrigonometricos = () => {
             <div className="p-6 bg-muted/50 rounded-lg border-l-4 border-secondary">
               <h3 className="text-xl font-semibold mb-3 text-foreground">2. Limite do Cosseno</h3>
               <div className="text-center py-4 bg-background rounded-md mb-3">
-                <p className="text-2xl font-mono flex items-center justify-center gap-2">
-                  <span className="flex flex-col items-center leading-tight">
+                <p className="text-2xl font-mono inline-flex items-start justify-center gap-2">
+                  <span className="inline-flex flex-col items-center leading-none">
                     <span>lim</span>
-                    <span className="text-xs">x→0</span>
+                    <span className="text-xs text-muted-foreground">x→0</span>
                   </span>
                   <span className="text-secondary font-bold">[(1 - cos(x)) / x] = 0</span>
                 </p>
@@ -175,10 +175,10 @@ const LimitesTrigonometricos = () => {
             <div className="p-6 bg-muted/50 rounded-lg border-l-4 border-accent">
               <h3 className="text-xl font-semibold mb-3 text-foreground">3. Limite da Tangente</h3>
               <div className="text-center py-4 bg-background rounded-md mb-3">
-                <p className="text-2xl font-mono flex items-center justify-center gap-2">
-                  <span className="flex flex-col items-center leading-tight">
+                <p className="text-2xl font-mono inline-flex items-start justify-center gap-2">
+                  <span className="inline-flex flex-col items-center leading-none">
                     <span>lim</span>
-                    <span className="text-xs">x→0</span>
+                    <span className="text-xs text-muted-foreground">x→0</span>
                   </span>
                   <span className="text-accent font-bold">[tan(x) / x] = 1</span>
                 </p>
@@ -191,10 +191,10 @@ const LimitesTrigonometricos = () => {
             <div className="p-6 bg-muted/50 rounded-lg border-l-4 border-primary">
               <h3 className="text-xl font-semibold mb-3 text-foreground">4. Variação do Limite Fundamental</h3>
               <div className="text-center py-4 bg-background rounded-md mb-3">
-                <p className="text-2xl font-mono flex items-center justify-center gap-2">
-                  <span className="flex flex-col items-center leading-tight">
+                <p className="text-2xl font-mono inline-flex items-start justify-center gap-2">
+                  <span className="inline-flex flex-col items-center leading-none">
                     <span>lim</span>
-                    <span className="text-xs">x→0</span>
+                    <span className="text-xs text-muted-foreground">x→0</span>
                   </span>
                   <span className="text-primary font-bold">[sin(ax) / x] = a</span>
                 </p>
@@ -207,10 +207,10 @@ const LimitesTrigonometricos = () => {
             <div className="p-6 bg-muted/50 rounded-lg border-l-4 border-secondary">
               <h3 className="text-xl font-semibold mb-3 text-foreground">5. Limite com Cosseno ao Quadrado</h3>
               <div className="text-center py-4 bg-background rounded-md mb-3">
-                <p className="text-2xl font-mono flex items-center justify-center gap-2">
-                  <span className="flex flex-col items-center leading-tight">
+                <p className="text-2xl font-mono inline-flex items-start justify-center gap-2">
+                  <span className="inline-flex flex-col items-center leading-none">
                     <span>lim</span>
-                    <span className="text-xs">x→0</span>
+                    <span className="text-xs text-muted-foreground">x→0</span>
                   </span>
                   <span className="text-secondary font-bold">[(1 - cos(x)) / x²] = 1/2</span>
                 </p>
