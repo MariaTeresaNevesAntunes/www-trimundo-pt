@@ -1,7 +1,38 @@
+import { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import SEO from '@/components/SEO';
+import { ChevronLeft, ChevronRight, RotateCcw } from 'lucide-react';
 
 const Identidades = () => {
+  const flashCards = [
+    { pergunta: "sin²θ + cos²θ = ?", resposta: "1" },
+    { pergunta: "tan(θ) = ?", resposta: "sin(θ) / cos(θ)" },
+    { pergunta: "cot(θ) = ?", resposta: "cos(θ) / sin(θ)" },
+    { pergunta: "csc(θ) = ?", resposta: "1 / sin(θ)" },
+    { pergunta: "sec(θ) = ?", resposta: "1 / cos(θ)" },
+    { pergunta: "tan²(θ) + 1 = ?", resposta: "sec²(θ)" },
+    { pergunta: "1 + cot²(θ) = ?", resposta: "csc²(θ)" },
+    { pergunta: "sin(2θ) = ?", resposta: "2sin(θ)cos(θ)" },
+    { pergunta: "cos(2θ) = ?", resposta: "cos²(θ) - sin²(θ)" },
+    { pergunta: "tan(2θ) = ?", resposta: "2tan(θ) / (1 - tan²(θ))" },
+    { pergunta: "sin²(θ) = ?", resposta: "1 - cos²(θ)" },
+    { pergunta: "cos²(θ) = ?", resposta: "1 - sin²(θ)" },
+  ];
+
+  const [currentCard, setCurrentCard] = useState(0);
+  const [isFlipped, setIsFlipped] = useState(false);
+
+  const nextCard = () => {
+    setCurrentCard((prev) => (prev + 1) % flashCards.length);
+    setIsFlipped(false);
+  };
+
+  const prevCard = () => {
+    setCurrentCard((prev) => (prev - 1 + flashCards.length) % flashCards.length);
+    setIsFlipped(false);
+  };
+
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -183,6 +214,81 @@ const Identidades = () => {
               </p>
             </CardContent>
           </Card>
+
+          {/* Flash Cards - Exercícios Interativos */}
+          <div className="mt-16 mb-8">
+            <div className="text-center mb-8">
+              <h2 className="text-2xl font-bold text-foreground mb-2">Exercícios - Flash Cards</h2>
+              <p className="text-muted-foreground">Clique na carta para revelar a resposta</p>
+            </div>
+            
+            <div className="relative w-full max-w-xl mx-auto">
+              <div 
+                className="relative h-72 cursor-pointer perspective-1000"
+                onClick={() => setIsFlipped(!isFlipped)}
+              >
+                <div 
+                  className={`absolute inset-0 transition-transform duration-500 transform-style-preserve-3d ${isFlipped ? 'rotate-y-180' : ''}`}
+                  style={{ transformStyle: 'preserve-3d' }}
+                >
+                  {/* Frente - Pergunta */}
+                  <div 
+                    className="absolute inset-0 bg-card rounded-2xl shadow-xl flex flex-col items-center justify-center p-8 backface-hidden"
+                    style={{ backfaceVisibility: 'hidden' }}
+                  >
+                    <span className="text-sm text-muted-foreground uppercase tracking-wider mb-4">Pergunta</span>
+                    <span className="text-2xl md:text-3xl font-mono text-primary text-center">
+                      {flashCards[currentCard].pergunta}
+                    </span>
+                  </div>
+                  
+                  {/* Verso - Resposta */}
+                  <div 
+                    className="absolute inset-0 bg-card rounded-2xl shadow-xl flex flex-col items-center justify-center p-8 backface-hidden"
+                    style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
+                  >
+                    <span className="text-sm text-muted-foreground uppercase tracking-wider mb-4">Resposta</span>
+                    <span className="text-2xl md:text-3xl font-mono text-math-green text-center">
+                      {flashCards[currentCard].resposta}
+                    </span>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Controles */}
+              <div className="flex items-center justify-center gap-4 mt-6">
+                <Button 
+                  variant="outline" 
+                  onClick={prevCard}
+                  className="flex items-center gap-2"
+                >
+                  <ChevronLeft className="w-4 h-4" />
+                  Anterior
+                </Button>
+                <Button 
+                  variant="secondary"
+                  onClick={() => setIsFlipped(!isFlipped)}
+                  className="flex items-center gap-2"
+                >
+                  <RotateCcw className="w-4 h-4" />
+                  Virar Carta
+                </Button>
+                <Button 
+                  variant="outline" 
+                  onClick={nextCard}
+                  className="flex items-center gap-2"
+                >
+                  Próximo
+                  <ChevronRight className="w-4 h-4" />
+                </Button>
+              </div>
+              
+              {/* Contador */}
+              <p className="text-center text-muted-foreground mt-4">
+                Carta {currentCard + 1} de {flashCards.length}
+              </p>
+            </div>
+          </div>
 
           {/* Dica Prática */}
           <Card className="math-card animate-slide-up border-primary/20 bg-primary/5" style={{ animationDelay: '0.5s' }}>
