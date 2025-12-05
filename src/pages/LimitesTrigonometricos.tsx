@@ -1,8 +1,70 @@
+import { useState } from "react";
 import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
+import { ChevronLeft, ChevronRight, RotateCcw, Check, X, Trophy } from "lucide-react";
 import SEO from "@/components/SEO";
 
 const LimitesTrigonometricos = () => {
+  const flashCards = [
+    { pergunta: "lim(x→0) [sin(x) / x]", resposta: "1" },
+    { pergunta: "lim(x→0) [(1 - cos(x)) / x]", resposta: "0" },
+    { pergunta: "lim(x→0) [tan(x) / x]", resposta: "1" },
+    { pergunta: "lim(x→0) [sin(ax) / x]", resposta: "a" },
+    { pergunta: "lim(x→0) [(1 - cos(x)) / x²]", resposta: "1/2" },
+    { pergunta: "lim(x→0) [sin(3x) / sin(5x)]", resposta: "3/5" },
+    { pergunta: "lim(x→0) [(1 - cos(2x)) / x²]", resposta: "2" },
+    { pergunta: "lim(x→0) [x / sin(x)]", resposta: "1" },
+    { pergunta: "lim(x→0) [sin²(x) / x²]", resposta: "1" },
+    { pergunta: "lim(x→0) [(tan(x) - sin(x)) / x³]", resposta: "1/2" },
+  ];
+
+  const [currentCard, setCurrentCard] = useState(0);
+  const [isFlipped, setIsFlipped] = useState(false);
+  const [quizMode, setQuizMode] = useState(false);
+  const [score, setScore] = useState(0);
+  const [answered, setAnswered] = useState<boolean[]>(new Array(flashCards.length).fill(false));
+  const [showResult, setShowResult] = useState(false);
+
+  const nextCard = () => {
+    setIsFlipped(false);
+    setCurrentCard((prev) => (prev + 1) % flashCards.length);
+  };
+
+  const prevCard = () => {
+    setIsFlipped(false);
+    setCurrentCard((prev) => (prev - 1 + flashCards.length) % flashCards.length);
+  };
+
+  const handleAnswer = (correct: boolean) => {
+    if (!answered[currentCard]) {
+      const newAnswered = [...answered];
+      newAnswered[currentCard] = true;
+      setAnswered(newAnswered);
+      if (correct) setScore((prev) => prev + 1);
+    }
+    setIsFlipped(true);
+    
+    // Check if quiz is complete
+    const newAnswered = [...answered];
+    newAnswered[currentCard] = true;
+    if (newAnswered.every(a => a)) {
+      setTimeout(() => setShowResult(true), 1000);
+    }
+  };
+
+  const resetQuiz = () => {
+    setCurrentCard(0);
+    setIsFlipped(false);
+    setScore(0);
+    setAnswered(new Array(flashCards.length).fill(false));
+    setShowResult(false);
+  };
+
+  const toggleQuizMode = () => {
+    setQuizMode(!quizMode);
+    resetQuiz();
+  };
   const exerciciosResolvidos = [
     {
       id: 1,
@@ -220,6 +282,101 @@ const LimitesTrigonometricos = () => {
               </p>
             </div>
           </div>
+        </Card>
+
+        {/* Flash Cards com Quiz */}
+        <Card className="p-8 mb-8 shadow-lg hover:shadow-xl transition-shadow">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
+            <h2 className="text-2xl font-bold text-primary">Flash Cards - Limites</h2>
+            <Button 
+              onClick={toggleQuizMode} 
+              variant={quizMode ? "default" : "outline"}
+              className="flex items-center gap-2"
+            >
+              <Trophy className="h-4 w-4" />
+              {quizMode ? "Modo Normal" : "Modo Quiz"}
+            </Button>
+          </div>
+
+          {showResult ? (
+            <div className="text-center py-12">
+              <Trophy className="h-16 w-16 mx-auto mb-4 text-primary" />
+              <h3 className="text-2xl font-bold mb-2">Quiz Completo!</h3>
+              <p className="text-xl mb-4">
+                Pontuação: <span className="text-primary font-bold">{score}/{flashCards.length}</span>
+              </p>
+              <p className="text-muted-foreground mb-6">
+                {score === flashCards.length ? "Perfeito! Dominas os limites! 🎉" : 
+                 score >= flashCards.length * 0.7 ? "Muito bem! Continua a praticar! 👏" :
+                 "Continua a estudar, vais melhorar! 💪"}
+              </p>
+              <Button onClick={resetQuiz} className="flex items-center gap-2 mx-auto">
+                <RotateCcw className="h-4 w-4" />
+                Tentar Novamente
+              </Button>
+            </div>
+          ) : (
+            <>
+              <div className="flex justify-center mb-4">
+                <span className="text-sm text-muted-foreground">
+                  Cartão {currentCard + 1} de {flashCards.length}
+                  {quizMode && ` • Pontuação: ${score}/${answered.filter(a => a).length}`}
+                </span>
+              </div>
+
+              <div 
+                className="perspective-1000 cursor-pointer mb-6"
+                onClick={() => !quizMode && setIsFlipped(!isFlipped)}
+              >
+                <div className={`relative w-full h-64 transition-transform duration-500 transform-style-preserve-3d ${isFlipped ? 'rotate-y-180' : ''}`}>
+                  {/* Frente */}
+                  <div className="absolute inset-0 backface-hidden bg-gradient-to-br from-primary/20 to-secondary/20 rounded-xl flex flex-col items-center justify-center p-6 border border-border">
+                    <p className="text-sm text-muted-foreground mb-3">Qual o resultado de:</p>
+                    <p className="text-xl md:text-2xl font-mono font-semibold text-center">{flashCards[currentCard].pergunta}</p>
+                    {!quizMode && <p className="text-sm text-muted-foreground mt-4">Clica para ver a resposta</p>}
+                  </div>
+                  
+                  {/* Verso */}
+                  <div className="absolute inset-0 backface-hidden rotate-y-180 bg-gradient-to-br from-secondary/20 to-primary/20 rounded-xl flex flex-col items-center justify-center p-6 border border-primary">
+                    <p className="text-sm text-muted-foreground mb-3">Resposta:</p>
+                    <p className="text-4xl md:text-5xl font-bold text-primary">{flashCards[currentCard].resposta}</p>
+                  </div>
+                </div>
+              </div>
+
+              {quizMode && !isFlipped && !answered[currentCard] && (
+                <div className="flex justify-center gap-4 mb-6">
+                  <Button 
+                    onClick={() => handleAnswer(false)} 
+                    variant="outline"
+                    className="flex items-center gap-2 border-destructive text-destructive hover:bg-destructive hover:text-destructive-foreground"
+                  >
+                    <X className="h-4 w-4" />
+                    Não Sei
+                  </Button>
+                  <Button 
+                    onClick={() => handleAnswer(true)}
+                    className="flex items-center gap-2 bg-green-600 hover:bg-green-700"
+                  >
+                    <Check className="h-4 w-4" />
+                    Sei a Resposta
+                  </Button>
+                </div>
+              )}
+
+              <div className="flex justify-center items-center gap-4">
+                <Button variant="outline" size="icon" onClick={prevCard}>
+                  <ChevronLeft className="h-4 w-4" />
+                </Button>
+                <Button variant="outline" size="icon" onClick={() => { setIsFlipped(false); setCurrentCard(0); }}>
+                  <RotateCcw className="h-4 w-4" />
+                </Button>
+                <Button variant="outline" size="icon" onClick={nextCard}>
+                  <ChevronRight className="h-4 w-4" />
+                </Button>
+              </div>
+            </>
+          )}
         </Card>
 
         {/* Exercícios Resolvidos */}
