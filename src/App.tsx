@@ -15,6 +15,7 @@ import Exercicios from "./pages/Exercicios";
 import LimitesTrigonometricos from "./pages/LimitesTrigonometricos";
 import Aplicacoes from "./pages/Aplicacoes";
 import PoliticaPrivacidade from "./pages/PoliticaPrivacidade";
+import TermosUso from "./pages/TermosUso";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -37,6 +38,7 @@ const App = () => (
           <Route path="/limites-trigonometricos" element={<LimitesTrigonometricos />} />
           <Route path="/aplicacoes" element={<Aplicacoes />} />
           <Route path="/politica-privacidade" element={<PoliticaPrivacidade />} />
+          <Route path="/termos-uso" element={<TermosUso />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
