@@ -1,0 +1,3 @@
+# Google AdSense
+# Substitua ca-pub-XXXXXXXXXXXXXXXX pelo seu ID de editor do AdSense
+# google.com, ca-pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
