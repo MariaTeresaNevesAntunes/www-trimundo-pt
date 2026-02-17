@@ -29,6 +29,13 @@ const Footer = () => {
             >
               Política de Privacidade
             </Link>
+            <span className="text-border">|</span>
+            <Link 
+              to="/contacto" 
+              className="text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Contacto
+            </Link>
           </nav>
         </div>
       </div>
