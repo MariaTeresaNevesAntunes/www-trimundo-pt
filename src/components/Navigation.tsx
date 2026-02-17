@@ -15,6 +15,7 @@ const Navigation = () => {
     { path: '/limites-trigonometricos', label: 'Limites' },
     { path: '/exercicios', label: 'Exercícios' },
     { path: '/aplicacoes', label: 'Aplicações' },
+    { path: '/contacto', label: 'Contacto' },
   ];
 
   const isActivePath = (path: string) => location.pathname === path;
