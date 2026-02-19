@@ -5,9 +5,12 @@ const Footer = () => {
     <footer className="bg-muted/30 border-t border-border mt-20">
       <div className="container mx-auto px-4 py-8">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} TriMundo. O conteúdo deste site é original e devidamente licenciado.
-          </p>
+          <div className="flex flex-col items-center md:items-start gap-1">
+            <p className="text-sm font-semibold text-foreground">Descobre a Trigonometria no Mundo Real</p>
+            <p className="text-xs text-muted-foreground">
+              © {new Date().getFullYear()} TriMundo. O conteúdo deste site é original e devidamente licenciado.
+            </p>
+          </div>
           <nav className="flex flex-wrap justify-center gap-4 text-sm">
             <Link 
               to="/sobre" 

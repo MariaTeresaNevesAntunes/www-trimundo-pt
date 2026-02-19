@@ -26,7 +26,7 @@ const Home = () => {
     <>
       <SEO
         title="Descobre a Trigonometria no Mundo Real"
-        description="Aprende trigonometria de forma interativa e visual. História, conceitos fundamentais, ângulos notáveis e aplicações no mundo real."
+        description="Descobre a Trigonometria no Mundo Real. Aprende trigonometria de forma interativa e visual. História, conceitos fundamentais, ângulos notáveis e aplicações no mundo real."
         structuredData={structuredData}
       />
       <div className="min-h-screen">
