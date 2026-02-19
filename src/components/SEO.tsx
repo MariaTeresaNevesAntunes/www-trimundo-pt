@@ -15,7 +15,7 @@ const SEO = ({
   ogImage = "https://lovable.dev/opengraph-image-p98pqg.png",
   structuredData 
 }: SEOProps) => {
-  const fullTitle = `TriMundo | ${title}`;
+  const fullTitle = title;
   const currentUrl = canonical || window.location.href;
 
   return (
