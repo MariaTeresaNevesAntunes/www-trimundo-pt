@@ -43,7 +43,7 @@ const Identidades = () => {
   return (
     <>
       <SEO
-        title="Identidades Trigonométricas"
+        title="MTNA-TriMundo-Identidades Trigonométricas"
         description="Descobre as identidades trigonométricas fundamentais: identidade pitagórica, quociente, recíprocas e ângulo duplo."
         structuredData={structuredData}
       />

@@ -57,7 +57,7 @@ const Historia = () => {
   return (
     <>
       <SEO
-        title="História da Trigonometria"
+        title="MTNA-TriMundo-História da Trigonometria"
         description="Descobre a fascinante evolução da trigonometria desde os babilónios até à era moderna. 3000 anos de história e descobertas."
         structuredData={structuredData}
       />

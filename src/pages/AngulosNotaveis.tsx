@@ -75,7 +75,7 @@ const AngulosNotaveis = () => {
     tg: "∞"
   }];
   return <>
-      <SEO title="Ângulos Notáveis" description="Aprende os valores exatos das funções trigonométricas para os ângulos notáveis: 0°, 30°, 45°, 60° e 90°." structuredData={structuredData} />
+      <SEO title="MTNA-TriMundo-Ângulos Notáveis" description="Aprende os valores exatos das funções trigonométricas para os ângulos notáveis: 0°, 30°, 45°, 60° e 90°." structuredData={structuredData} />
       <main className="min-h-screen bg-gradient-to-br from-background to-muted/20">
       <div className="container mx-auto px-4 py-8">
         {/* Header */}

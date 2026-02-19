@@ -12,7 +12,7 @@ const Contacto = () => {
   return (
     <>
       <SEO
-        title="Contacto"
+        title="MTNA-TriMundo-Contacto"
         description="Tem dúvidas, sugestões ou precisa de apoio? Entre em contacto connosco através do email contacto@trimundo.pt."
         structuredData={structuredData}
       />
