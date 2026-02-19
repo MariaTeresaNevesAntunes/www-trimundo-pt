@@ -25,9 +25,12 @@ const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 font-bold text-xl text-gradient">
+          <Link to="/" className="flex items-center gap-2">
             <Calculator className="w-8 h-8 text-primary animate-pulse-soft" />
-            Tri Mundo
+            <div className="flex flex-col leading-tight">
+              <span className="font-bold text-xl text-gradient">Tri Mundo</span>
+              <span className="text-xs text-muted-foreground hidden sm:block">Descobre a Trigonometria no Mundo Real</span>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
