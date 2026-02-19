@@ -159,7 +159,7 @@ const Conceitos = () => {
   return (
     <>
       <SEO
-        title="Conceitos Fundamentais de Trigonometria"
+        title="MTNA-TriMundo-Conceitos Fundamentais de Trigonometria"
         description="Aprende os conceitos fundamentais de trigonometria: seno, cosseno, tangente, círculo unitário e relações trigonométricas."
         structuredData={structuredData}
       />

@@ -96,7 +96,7 @@ const Aplicacoes = () => {
   return (
     <>
       <SEO
-        title="Aplicações Práticas da Trigonometria"
+        title="MTNA-TriMundo-Aplicações Práticas da Trigonometria"
         description="Descobre como a trigonometria é aplicada em engenharia civil, arquitetura, navegação, astronomia, física e medicina."
         structuredData={structuredData}
       />
