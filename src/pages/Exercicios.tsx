@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { Calculator, CheckCircle, XCircle, BookOpen } from 'lucide-react';
 import SEO from '@/components/SEO';
+import AdBanner from '@/components/AdBanner';
 
 interface Exercise {
   id: number;
@@ -150,6 +151,9 @@ const Exercicios = () => {
             Funções Trigonométricas
           </Button>
         </div>
+
+        {/* Ad Banner */}
+        <AdBanner adSlot="7890123456" adFormat="horizontal" />
 
         {/* Exercises Grid */}
         <div className="grid gap-6">

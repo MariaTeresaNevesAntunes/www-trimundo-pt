@@ -2,6 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Building2, Navigation, Atom, Stethoscope, Ruler, MapPin } from "lucide-react";
 import SEO from '@/components/SEO';
+import AdBanner from '@/components/AdBanner';
 
 const Aplicacoes = () => {
   const structuredData = {
@@ -160,6 +161,11 @@ const Aplicacoes = () => {
           </div>
         </div>
       </section>
+
+      {/* Ad Banner */}
+      <div className="container mx-auto px-4">
+        <AdBanner adSlot="6789012345" adFormat="horizontal" />
+      </div>
 
       {/* Practical Examples */}
       <section className="py-20 bg-muted/50">

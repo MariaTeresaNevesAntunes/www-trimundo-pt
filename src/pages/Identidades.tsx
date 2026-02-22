@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import SEO from '@/components/SEO';
+import AdBanner from '@/components/AdBanner';
 import { ChevronLeft, ChevronRight, RotateCcw } from 'lucide-react';
 
 const Identidades = () => {
@@ -214,6 +215,9 @@ const Identidades = () => {
               </p>
             </CardContent>
           </Card>
+
+          {/* Ad Banner */}
+          <AdBanner adSlot="5678901234" adFormat="horizontal" />
 
           {/* Flash Cards - Exercícios Interativos */}
           <div className="mt-16 mb-8">

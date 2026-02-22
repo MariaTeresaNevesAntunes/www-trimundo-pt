@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { ChevronLeft, ChevronRight, RotateCcw, Check, X, Trophy } from "lucide-react";
 import SEO from "@/components/SEO";
-
+import AdBanner from '@/components/AdBanner';
 const LimitesTrigonometricos = () => {
   const flashCards = [
     { pergunta: "lim(x→0) [sin(x) / x]", resposta: "1" },
@@ -283,6 +283,9 @@ const LimitesTrigonometricos = () => {
             </div>
           </div>
         </Card>
+
+        {/* Ad Banner */}
+        <AdBanner adSlot="8901234567" adFormat="horizontal" className="my-8" />
 
         {/* Flash Cards com Quiz */}
         <Card className="p-8 mb-8 shadow-lg hover:shadow-xl transition-shadow">
