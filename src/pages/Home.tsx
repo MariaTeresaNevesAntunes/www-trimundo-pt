@@ -1,6 +1,7 @@
 import Hero from '@/components/Hero';
 import ConceptCard from '@/components/ConceptCard';
 import SEO from '@/components/SEO';
+import AdBanner from '@/components/AdBanner';
 import { 
   History, 
   Calculator, 
@@ -85,6 +86,11 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* Ad Banner */}
+      <div className="container mx-auto px-4">
+        <AdBanner adSlot="1234567890" adFormat="horizontal" />
+      </div>
 
       {/* Applications Section */}
       <section className="py-20 bg-muted/30">

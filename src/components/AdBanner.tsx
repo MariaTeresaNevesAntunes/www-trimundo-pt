@@ -44,7 +44,7 @@ const AdBanner = ({
           display: 'block',
           textAlign: 'center'
         }}
-        data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" // Substitua pelo seu ID de editor
+        data-ad-client="ca-pub-8664195567929159"
         data-ad-slot={adSlot}
         data-ad-format={adFormat}
         data-full-width-responsive={fullWidth ? 'true' : 'false'}

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Triangle, Circle, Calculator, Eye, ArrowRight } from 'lucide-react';
 import SEO from '@/components/SEO';
+import AdBanner from '@/components/AdBanner';
 
 const Conceitos = () => {
   const [selectedConcept, setSelectedConcept] = useState('triangulo');
@@ -217,6 +218,11 @@ const Conceitos = () => {
           </div>
         </div>
       </section>
+
+      {/* Ad Banner */}
+      <div className="container mx-auto px-4">
+        <AdBanner adSlot="3456789012" adFormat="horizontal" />
+      </div>
 
       {/* Example Section */}
       <section className="py-20 bg-muted/30">

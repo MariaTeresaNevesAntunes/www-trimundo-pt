@@ -1,5 +1,6 @@
 import { Clock, MapPin, Star, Compass, Calculator, Globe } from 'lucide-react';
 import SEO from '@/components/SEO';
+import AdBanner from '@/components/AdBanner';
 
 const Historia = () => {
   const structuredData = {
@@ -109,6 +110,11 @@ const Historia = () => {
           </div>
         </div>
       </section>
+
+      {/* Ad Banner */}
+      <div className="container mx-auto px-4">
+        <AdBanner adSlot="2345678901" adFormat="horizontal" />
+      </div>
 
       {/* Curiosity Section */}
       <section className="py-20 bg-muted/30">

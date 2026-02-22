@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Calculator, Circle, ChevronLeft, ChevronRight, RotateCcw } from "lucide-react";
 import SEO from '@/components/SEO';
-
+import AdBanner from '@/components/AdBanner';
 const AngulosNotaveis = () => {
   const flashCards = [
     { pergunta: "sen 0° = ?", resposta: "0" },
@@ -130,6 +130,8 @@ const AngulosNotaveis = () => {
           </Card>
         </div>
 
+        {/* Ad Banner */}
+        <AdBanner adSlot="4567890123" adFormat="horizontal" />
 
         {/* Flash Cards - Exercícios Interativos */}
         <div className="mb-12 animate-slide-up" style={{ animationDelay: "0.2s" }}>
