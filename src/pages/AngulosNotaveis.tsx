@@ -83,7 +83,7 @@ const AngulosNotaveis = () => {
           <div className="flex items-center justify-center gap-3 mb-4">
             <Circle className="w-8 h-8 text-primary animate-pulse-soft" />
             <h1 className="text-4xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-              Ângulos Notáveis
+              MTNA-TriMundo-Ângulos Notáveis
             </h1>
             <Calculator className="w-8 h-8 text-primary animate-pulse-soft" />
           </div>

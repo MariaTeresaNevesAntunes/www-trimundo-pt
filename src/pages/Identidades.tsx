@@ -52,7 +52,7 @@ const Identidades = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 animate-fade-in">
           <h1 className="heading-xl mb-4 gradient-text">
-            Identidades Trigonométricas
+            MTNA-TriMundo-Identidades Trigonométricas
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             As identidades são ferramentas fundamentais que relacionam as funções trigonométricas entre si. 
