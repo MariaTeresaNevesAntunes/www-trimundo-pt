@@ -190,7 +190,7 @@ const LimitesTrigonometricos = () => {
 
         <div className="text-center mb-12 animate-fade-in">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-            Limites Trigonométricos
+            MTNA-TriMundo-Limites Trigonométricos
           </h1>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Explora os limites fundamentais da trigonometria e aprende a resolver problemas passo a passo
