@@ -1,3 +1,4 @@
+// TriMundo - Página Inicial
 import Hero from '@/components/Hero';
 import ConceptCard from '@/components/ConceptCard';
 import SEO from '@/components/SEO';
