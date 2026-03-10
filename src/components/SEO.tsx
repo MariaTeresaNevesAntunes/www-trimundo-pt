@@ -5,38 +5,46 @@ interface SEOProps {
   description: string;
   canonical?: string;
   ogImage?: string;
+  keywords?: string;
   structuredData?: object;
 }
+
+const SITE_URL = 'https://trimundo.pt';
+const SITE_NAME = 'TriMundo';
+const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.png`;
 
 const SEO = ({ 
   title, 
   description, 
   canonical, 
-  ogImage = "https://lovable.dev/opengraph-image-p98pqg.png",
+  ogImage = DEFAULT_OG_IMAGE,
+  keywords,
   structuredData 
 }: SEOProps) => {
-  const fullTitle = title;
-  const currentUrl = canonical || window.location.href;
+  const currentUrl = canonical || `${SITE_URL}${window.location.pathname}`;
 
   return (
     <Helmet>
-      {/* Title */}
-      <title>{fullTitle}</title>
+      <title>{title}</title>
       
-      {/* Meta Tags */}
       <meta name="description" content={description} />
+      {keywords && <meta name="keywords" content={keywords} />}
+      <meta name="author" content="TriMundo" />
+      <meta name="robots" content="index, follow" />
       <link rel="canonical" href={currentUrl} />
       
       {/* Open Graph */}
-      <meta property="og:title" content={fullTitle} />
+      <meta property="og:site_name" content={SITE_NAME} />
+      <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:url" content={currentUrl} />
       <meta property="og:image" content={ogImage} />
       <meta property="og:type" content="website" />
+      <meta property="og:locale" content="pt_PT" />
       
       {/* Twitter Card */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={fullTitle} />
+      <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={ogImage} />
       
