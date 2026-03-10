@@ -49,11 +49,11 @@ const SEO = ({
       <meta name="twitter:image" content={ogImage} />
       
       {/* Structured Data */}
-      {structuredData && (
-        <script type="application/ld+json">
-          {JSON.stringify(structuredData)}
+      {structuredData && (Array.isArray(structuredData) ? structuredData : [structuredData]).map((data, i) => (
+        <script key={i} type="application/ld+json">
+          {JSON.stringify(data)}
         </script>
-      )}
+      ))}
     </Helmet>
   );
 };
