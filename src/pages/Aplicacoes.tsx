@@ -101,6 +101,8 @@ const Aplicacoes = () => {
       <SEO
         title="MTNA-TriMundo-Aplicações Práticas da Trigonometria"
         description="Descobre como a trigonometria é aplicada em engenharia civil, arquitetura, navegação, astronomia, física e medicina."
+        keywords="aplicações trigonometria, engenharia, arquitetura, navegação, astronomia, GPS"
+        canonical="https://trimundo.pt/aplicacoes"
         structuredData={structuredData}
       />
       <div className="min-h-screen bg-background">

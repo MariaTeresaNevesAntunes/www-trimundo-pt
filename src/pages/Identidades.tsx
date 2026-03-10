@@ -38,7 +38,9 @@ const Identidades = () => {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Identidades Trigonométricas Fundamentais",
-    "description": "Identidades fundamentais, de quociente, recíprocas, pitagóricas e de ângulo duplo"
+    "description": "Identidades fundamentais, de quociente, recíprocas, pitagóricas e de ângulo duplo",
+    "publisher": { "@type": "Organization", "name": "TriMundo", "url": "https://trimundo.pt" },
+    "mainEntityOfPage": "https://trimundo.pt/identidades"
   };
 
   return (
@@ -46,6 +48,8 @@ const Identidades = () => {
       <SEO
         title="MTNA-TriMundo-Identidades Trigonométricas"
         description="Descobre as identidades trigonométricas fundamentais: identidade pitagórica, quociente, recíprocas e ângulo duplo."
+        keywords="identidades trigonométricas, identidade pitagórica, ângulo duplo, fórmulas trigonometria"
+        canonical="https://trimundo.pt/identidades"
         structuredData={structuredData}
       />
       <main className="min-h-screen bg-gradient-subtle pt-24 pb-12">
