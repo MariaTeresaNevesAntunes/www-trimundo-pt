@@ -41,7 +41,9 @@ const AngulosNotaveis = () => {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Ângulos Notáveis em Trigonometria",
-    "description": "Valores de seno, cosseno e tangente para os ângulos notáveis: 0°, 30°, 45°, 60°, 90°"
+    "description": "Valores de seno, cosseno e tangente para os ângulos notáveis: 0°, 30°, 45°, 60°, 90°",
+    "publisher": { "@type": "Organization", "name": "TriMundo", "url": "https://trimundo.pt" },
+    "mainEntityOfPage": "https://trimundo.pt/angulos-notaveis"
   };
   const tabelaValores = [{
     angulo: "0°",
