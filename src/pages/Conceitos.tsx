@@ -164,6 +164,8 @@ const Conceitos = () => {
       <SEO
         title="MTNA-TriMundo-Conceitos Fundamentais de Trigonometria"
         description="Aprende os conceitos fundamentais de trigonometria: seno, cosseno, tangente, círculo unitário e relações trigonométricas."
+        keywords="seno, cosseno, tangente, triângulo retângulo, círculo unitário, SOH-CAH-TOA, funções trigonométricas"
+        canonical="https://trimundo.pt/conceitos"
         structuredData={structuredData}
       />
       <div className="min-h-screen pt-20">

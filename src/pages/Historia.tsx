@@ -62,6 +62,8 @@ const Historia = () => {
       <SEO
         title="MTNA-TriMundo-História da Trigonometria"
         description="Descobre a fascinante evolução da trigonometria desde os babilónios até à era moderna. 3000 anos de história e descobertas."
+        keywords="história trigonometria, babilónios, gregos, navegadores portugueses, evolução matemática"
+        canonical="https://trimundo.pt/historia"
         structuredData={structuredData}
       />
       <div className="min-h-screen pt-20">
