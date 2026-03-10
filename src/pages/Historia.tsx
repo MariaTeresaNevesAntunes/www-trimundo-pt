@@ -8,7 +8,9 @@ const Historia = () => {
     "@type": "Article",
     "headline": "História da Trigonometria: 3000 Anos de Evolução",
     "description": "Descobre a evolução da trigonometria desde os babilónios até à era moderna",
-    "articleBody": "Uma jornada fascinante através dos milénios, desde as primeiras observações astronómicas até às aplicações modernas."
+    "articleBody": "Uma jornada fascinante através dos milénios, desde as primeiras observações astronómicas até às aplicações modernas.",
+    "publisher": { "@type": "Organization", "name": "TriMundo", "url": "https://trimundo.pt" },
+    "mainEntityOfPage": "https://trimundo.pt/historia"
   };
   const timelineEvents = [
     {
