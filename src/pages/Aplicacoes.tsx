@@ -9,7 +9,9 @@ const Aplicacoes = () => {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Aplicações Práticas da Trigonometria",
-    "description": "Descobre como a trigonometria é aplicada em engenharia, arquitetura, navegação, física e medicina"
+    "description": "Descobre como a trigonometria é aplicada em engenharia, arquitetura, navegação, física e medicina",
+    "publisher": { "@type": "Organization", "name": "TriMundo", "url": "https://trimundo.pt" },
+    "mainEntityOfPage": "https://trimundo.pt/aplicacoes"
   };
   const aplicacoesData = [
     {

@@ -11,8 +11,9 @@ const PoliticaPrivacidade = () => {
   return (
     <>
       <SEO
-        title="Política de Privacidade"
+        title="MTNA-TriMundo-Política de Privacidade"
         description="Política de privacidade do site trimundo.pt. Saiba como recolhemos, utilizamos e protegemos os seus dados pessoais."
+        canonical="https://trimundo.pt/politica-privacidade"
         structuredData={structuredData}
       />
       <div className="min-h-screen bg-background">

@@ -259,6 +259,7 @@ const Exercicios = () => {
         )}
       </div>
     </main>
+    </>
   );
 };
 

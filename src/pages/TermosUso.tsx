@@ -12,8 +12,9 @@ const TermosUso = () => {
   return (
     <>
       <SEO
-        title="Termos e Condições"
+        title="MTNA-TriMundo-Termos e Condições"
         description="Termos e condições de utilização do site trimundo.pt. Ao utilizar o website, o utilizador concorda com os presentes termos."
+        canonical="https://trimundo.pt/termos-uso"
         structuredData={structuredData}
       />
       <div className="min-h-screen bg-background">

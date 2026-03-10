@@ -14,6 +14,7 @@ const Contacto = () => {
       <SEO
         title="MTNA-TriMundo-Contacto"
         description="Tem dúvidas, sugestões ou precisa de apoio? Entre em contacto connosco através do email contacto@trimundo.pt."
+        canonical="https://trimundo.pt/contacto"
         structuredData={structuredData}
       />
       <div className="min-h-screen bg-background">
