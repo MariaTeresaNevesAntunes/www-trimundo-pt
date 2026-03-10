@@ -10,7 +10,9 @@ const Conceitos = () => {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Conceitos Fundamentais de Trigonometria",
-    "description": "Aprende os conceitos básicos: seno, cosseno, tangente e o círculo unitário"
+    "description": "Aprende os conceitos básicos: seno, cosseno, tangente e o círculo unitário",
+    "publisher": { "@type": "Organization", "name": "TriMundo", "url": "https://trimundo.pt" },
+    "mainEntityOfPage": "https://trimundo.pt/conceitos"
   };
 
   const concepts = {
