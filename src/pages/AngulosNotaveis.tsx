@@ -41,7 +41,9 @@ const AngulosNotaveis = () => {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Ângulos Notáveis em Trigonometria",
-    "description": "Valores de seno, cosseno e tangente para os ângulos notáveis: 0°, 30°, 45°, 60°, 90°"
+    "description": "Valores de seno, cosseno e tangente para os ângulos notáveis: 0°, 30°, 45°, 60°, 90°",
+    "publisher": { "@type": "Organization", "name": "TriMundo", "url": "https://trimundo.pt" },
+    "mainEntityOfPage": "https://trimundo.pt/angulos-notaveis"
   };
   const tabelaValores = [{
     angulo: "0°",
@@ -75,7 +77,7 @@ const AngulosNotaveis = () => {
     tg: "∞"
   }];
   return <>
-      <SEO title="MTNA-TriMundo-Ângulos Notáveis" description="Aprende os valores exatos das funções trigonométricas para os ângulos notáveis: 0°, 30°, 45°, 60° e 90°." structuredData={structuredData} />
+      <SEO title="MTNA-TriMundo-Ângulos Notáveis" description="Aprende os valores exatos das funções trigonométricas para os ângulos notáveis: 0°, 30°, 45°, 60° e 90°." keywords="ângulos notáveis, seno 30, cosseno 45, tangente 60, tabela trigonométrica, quadrantes" canonical="https://trimundo.pt/angulos-notaveis" structuredData={structuredData} />
       <main className="min-h-screen bg-gradient-to-br from-background to-muted/20">
       <div className="container mx-auto px-4 py-8">
         {/* Header */}

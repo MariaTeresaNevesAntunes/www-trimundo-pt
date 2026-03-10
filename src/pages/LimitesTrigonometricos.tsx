@@ -162,7 +162,8 @@ const LimitesTrigonometricos = () => {
       <SEO 
         title="MTNA-TriMundo-Limites Trigonométricos"
         description="Aprende sobre limites trigonométricos notáveis e resolve exercícios práticos passo a passo. Descobre limites fundamentais como lim(sin(x)/x) e suas aplicações."
-        canonical="https://trimundo.lovable.app/limites-trigonometricos"
+        keywords="limites trigonométricos, lim sin(x)/x, limites notáveis, cálculo trigonometria"
+        canonical="https://trimundo.pt/limites-trigonometricos"
         structuredData={{
           "@context": "https://schema.org",
           "@type": "EducationalOccupationalProgram",
@@ -170,7 +171,8 @@ const LimitesTrigonometricos = () => {
           "description": "Estudo completo sobre limites trigonométricos notáveis e exercícios resolvidos",
           "provider": {
             "@type": "Organization",
-            "name": "TriMundo"
+            "name": "TriMundo",
+            "url": "https://trimundo.pt"
           }
         }}
       />

@@ -10,7 +10,9 @@ const Conceitos = () => {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Conceitos Fundamentais de Trigonometria",
-    "description": "Aprende os conceitos básicos: seno, cosseno, tangente e o círculo unitário"
+    "description": "Aprende os conceitos básicos: seno, cosseno, tangente e o círculo unitário",
+    "publisher": { "@type": "Organization", "name": "TriMundo", "url": "https://trimundo.pt" },
+    "mainEntityOfPage": "https://trimundo.pt/conceitos"
   };
 
   const concepts = {
@@ -162,6 +164,8 @@ const Conceitos = () => {
       <SEO
         title="MTNA-TriMundo-Conceitos Fundamentais de Trigonometria"
         description="Aprende os conceitos fundamentais de trigonometria: seno, cosseno, tangente, círculo unitário e relações trigonométricas."
+        keywords="seno, cosseno, tangente, triângulo retângulo, círculo unitário, SOH-CAH-TOA, funções trigonométricas"
+        canonical="https://trimundo.pt/conceitos"
         structuredData={structuredData}
       />
       <div className="min-h-screen pt-20">

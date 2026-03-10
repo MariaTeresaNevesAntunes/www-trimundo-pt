@@ -8,7 +8,9 @@ const Historia = () => {
     "@type": "Article",
     "headline": "História da Trigonometria: 3000 Anos de Evolução",
     "description": "Descobre a evolução da trigonometria desde os babilónios até à era moderna",
-    "articleBody": "Uma jornada fascinante através dos milénios, desde as primeiras observações astronómicas até às aplicações modernas."
+    "articleBody": "Uma jornada fascinante através dos milénios, desde as primeiras observações astronómicas até às aplicações modernas.",
+    "publisher": { "@type": "Organization", "name": "TriMundo", "url": "https://trimundo.pt" },
+    "mainEntityOfPage": "https://trimundo.pt/historia"
   };
   const timelineEvents = [
     {
@@ -60,6 +62,8 @@ const Historia = () => {
       <SEO
         title="MTNA-TriMundo-História da Trigonometria"
         description="Descobre a fascinante evolução da trigonometria desde os babilónios até à era moderna. 3000 anos de história e descobertas."
+        keywords="história trigonometria, babilónios, gregos, navegadores portugueses, evolução matemática"
+        canonical="https://trimundo.pt/historia"
         structuredData={structuredData}
       />
       <div className="min-h-screen pt-20">

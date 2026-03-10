@@ -20,8 +20,20 @@ const Home = () => {
     "@type": "EducationalOrganization",
     "name": "TriMundo",
     "description": "Plataforma educativa interativa para aprender trigonometria de forma visual e contextualizada",
-    "url": "https://lovable.app",
-    "educationalProgramMode": "online"
+    "url": "https://trimundo.pt",
+    "educationalProgramMode": "online",
+    "sameAs": "https://trimundo.pt"
+  };
+
+  const breadcrumbData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Início",
+      "item": "https://trimundo.pt"
+    }]
   };
 
   return (
@@ -29,7 +41,9 @@ const Home = () => {
       <SEO
         title="MTNA-TriMundo-Descobre a Trigonometria no Mundo Real"
         description="Descobre a Trigonometria no Mundo Real. Aprende trigonometria de forma interativa e visual. História, conceitos fundamentais, ângulos notáveis e aplicações no mundo real."
-        structuredData={structuredData}
+        keywords="trigonometria, matemática, seno, cosseno, tangente, ângulos notáveis, aprender trigonometria"
+        canonical="https://trimundo.pt"
+        structuredData={[structuredData, breadcrumbData]}
       />
       <div className="min-h-screen">
         <Hero />

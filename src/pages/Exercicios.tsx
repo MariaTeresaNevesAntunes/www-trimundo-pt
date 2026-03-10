@@ -114,6 +114,20 @@ const Exercicios = () => {
   };
 
   return (
+    <>
+      <SEO
+        title="MTNA-TriMundo-Exercícios de Trigonometria"
+        description="Pratica exercícios de trigonometria interativos: lei dos cossenos, funções trigonométricas e verificação de respostas em tempo real."
+        keywords="exercícios trigonometria, lei dos cossenos, prática matemática, exercícios interativos"
+        canonical="https://trimundo.pt/exercicios"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "Quiz",
+          "name": "Exercícios de Trigonometria",
+          "description": "Exercícios interativos de trigonometria com verificação automática",
+          "publisher": { "@type": "Organization", "name": "TriMundo", "url": "https://trimundo.pt" }
+        }}
+      />
     <main className="min-h-screen bg-gradient-subtle py-12">
       <div className="container mx-auto px-4 max-w-4xl">
         {/* Header */}
@@ -245,6 +259,7 @@ const Exercicios = () => {
         )}
       </div>
     </main>
+    </>
   );
 };
 
