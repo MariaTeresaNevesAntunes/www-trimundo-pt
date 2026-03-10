@@ -6,7 +6,7 @@ interface SEOProps {
   canonical?: string;
   ogImage?: string;
   keywords?: string;
-  structuredData?: object;
+  structuredData?: object | object[];
 }
 
 const SITE_URL = 'https://trimundo.pt';
