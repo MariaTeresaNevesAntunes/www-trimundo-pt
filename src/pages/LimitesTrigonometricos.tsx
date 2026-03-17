@@ -160,7 +160,7 @@ const LimitesTrigonometricos = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
       <SEO 
-        title="MTNA-TriMundo-Limites Trigonométricos"
+        title="Limites Trigonométricos | TriMundo"
         description="Aprende sobre limites trigonométricos notáveis e resolve exercícios práticos passo a passo. Descobre limites fundamentais como lim(sin(x)/x) e suas aplicações."
         keywords="limites trigonométricos, lim sin(x)/x, limites notáveis, cálculo trigonometria"
         canonical="https://trimundo.pt/limites-trigonometricos"
