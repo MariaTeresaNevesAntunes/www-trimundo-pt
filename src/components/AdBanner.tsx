@@ -50,7 +50,7 @@ const AdBanner = ({
         data-full-width-responsive={fullWidth ? 'true' : 'false'}
       />
       {/* Placeholder visual para desenvolvimento */}
-      {process.env.NODE_ENV === 'development' && (
+      {import.meta.env.DEV && (
         <div className="bg-muted/50 border-2 border-dashed border-border rounded-lg p-4 text-center text-muted-foreground text-sm">
           <p className="font-medium">Espaço para Anúncio</p>
           <p className="text-xs">Slot: {adSlot} | Formato: {adFormat}</p>
