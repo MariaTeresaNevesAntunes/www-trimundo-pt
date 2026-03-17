@@ -162,7 +162,7 @@ const Conceitos = () => {
   return (
     <>
       <SEO
-        title="MTNA-TriMundo-Conceitos Fundamentais de Trigonometria"
+        title="Conceitos Fundamentais de Trigonometria | TriMundo"
         description="Aprende os conceitos fundamentais de trigonometria: seno, cosseno, tangente, círculo unitário e relações trigonométricas."
         keywords="seno, cosseno, tangente, triângulo retângulo, círculo unitário, SOH-CAH-TOA, funções trigonométricas"
         canonical="https://trimundo.pt/conceitos"
