@@ -46,7 +46,7 @@ const Identidades = () => {
   return (
     <>
       <SEO
-        title="MTNA-TriMundo-Identidades Trigonométricas"
+        title="Identidades Trigonométricas | TriMundo"
         description="Descobre as identidades trigonométricas fundamentais: identidade pitagórica, quociente, recíprocas e ângulo duplo."
         keywords="identidades trigonométricas, identidade pitagórica, ângulo duplo, fórmulas trigonometria"
         canonical="https://trimundo.pt/identidades"
@@ -56,7 +56,7 @@ const Identidades = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 animate-fade-in">
           <h1 className="heading-xl mb-4 gradient-text">
-            MTNA-TriMundo-Identidades Trigonométricas
+            Identidades Trigonométricas
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             As identidades são ferramentas fundamentais que relacionam as funções trigonométricas entre si. 

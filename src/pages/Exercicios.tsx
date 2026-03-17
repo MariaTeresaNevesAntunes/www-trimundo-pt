@@ -116,7 +116,7 @@ const Exercicios = () => {
   return (
     <>
       <SEO
-        title="MTNA-TriMundo-Exercícios de Trigonometria"
+        title="Exercícios de Trigonometria | TriMundo"
         description="Pratica exercícios de trigonometria interativos: lei dos cossenos, funções trigonométricas e verificação de respostas em tempo real."
         keywords="exercícios trigonometria, lei dos cossenos, prática matemática, exercícios interativos"
         canonical="https://trimundo.pt/exercicios"

@@ -77,7 +77,7 @@ const AngulosNotaveis = () => {
     tg: "∞"
   }];
   return <>
-      <SEO title="MTNA-TriMundo-Ângulos Notáveis" description="Aprende os valores exatos das funções trigonométricas para os ângulos notáveis: 0°, 30°, 45°, 60° e 90°." keywords="ângulos notáveis, seno 30, cosseno 45, tangente 60, tabela trigonométrica, quadrantes" canonical="https://trimundo.pt/angulos-notaveis" structuredData={structuredData} />
+      <SEO title="Ângulos Notáveis | TriMundo" description="Aprende os valores exatos das funções trigonométricas para os ângulos notáveis: 0°, 30°, 45°, 60° e 90°." keywords="ângulos notáveis, seno 30, cosseno 45, tangente 60, tabela trigonométrica, quadrantes" canonical="https://trimundo.pt/angulos-notaveis" structuredData={structuredData} />
       <main className="min-h-screen bg-gradient-to-br from-background to-muted/20">
       <div className="container mx-auto px-4 py-8">
         {/* Header */}
@@ -85,7 +85,7 @@ const AngulosNotaveis = () => {
           <div className="flex items-center justify-center gap-3 mb-4">
             <Circle className="w-8 h-8 text-primary animate-pulse-soft" />
             <h1 className="text-4xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-              MTNA-TriMundo-Ângulos Notáveis
+              Ângulos Notáveis
             </h1>
             <Calculator className="w-8 h-8 text-primary animate-pulse-soft" />
           </div>

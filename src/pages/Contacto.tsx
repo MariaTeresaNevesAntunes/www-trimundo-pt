@@ -12,7 +12,7 @@ const Contacto = () => {
   return (
     <>
       <SEO
-        title="MTNA-TriMundo-Contacto"
+        title="Contacto | TriMundo"
         description="Tem dúvidas, sugestões ou precisa de apoio? Entre em contacto connosco através do email contacto@trimundo.pt."
         canonical="https://trimundo.pt/contacto"
         structuredData={structuredData}
@@ -21,7 +21,7 @@ const Contacto = () => {
         <div className="container mx-auto px-4 py-16 max-w-4xl">
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-              MTNA-TriMundo-Contacto
+              Contacto
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Tem dúvidas, sugestões ou precisa de apoio?
