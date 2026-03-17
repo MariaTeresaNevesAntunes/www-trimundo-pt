@@ -99,7 +99,7 @@ const Aplicacoes = () => {
   return (
     <>
       <SEO
-        title="MTNA-TriMundo-Aplicações Práticas da Trigonometria"
+        title="Aplicações Práticas da Trigonometria | TriMundo"
         description="Descobre como a trigonometria é aplicada em engenharia civil, arquitetura, navegação, astronomia, física e medicina."
         keywords="aplicações trigonometria, engenharia, arquitetura, navegação, astronomia, GPS"
         canonical="https://trimundo.pt/aplicacoes"
