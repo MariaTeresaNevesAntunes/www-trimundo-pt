@@ -110,7 +110,7 @@ const Aplicacoes = () => {
       <header className="py-20 hero-gradient">
         <div className="container mx-auto px-4 text-center">
           <h1 className="heading-xl text-white mb-6">
-            MTNA-TriMundo-Aplicações <span className="text-accent-light">Práticas da Trigonometria</span>
+            Aplicações <span className="text-accent-light">Práticas da Trigonometria</span>
           </h1>
           <p className="text-xl text-white/90 max-w-4xl mx-auto leading-relaxed">
             A trigonometria tem aplicações práticas e cruciais em diversas áreas, moldando o mundo moderno através de cálculos precisos e análises fundamentais.

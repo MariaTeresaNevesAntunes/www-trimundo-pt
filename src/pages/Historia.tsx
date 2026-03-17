@@ -71,7 +71,7 @@ const Historia = () => {
         <header className="py-20 hero-gradient">
         <div className="container mx-auto px-4 text-center">
           <h1 className="heading-xl text-white mb-6">
-            MTNA-TriMundo-História da <span className="text-accent-light">Trigonometria</span>
+            História da <span className="text-accent-light">Trigonometria</span>
           </h1>
           <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
             Uma jornada fascinante através dos milénios, desde as primeiras 

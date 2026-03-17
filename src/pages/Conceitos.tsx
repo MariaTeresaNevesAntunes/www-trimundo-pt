@@ -173,7 +173,7 @@ const Conceitos = () => {
       <section className="py-20 hero-gradient">
         <div className="container mx-auto px-4 text-center">
           <h1 className="heading-xl text-white mb-6">
-            MTNA-TriMundo-Conceitos <span className="text-accent-light">Fundamentais de Trigonometria</span>
+            Conceitos <span className="text-accent-light">Fundamentais de Trigonometria</span>
           </h1>
           <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
             Descobre as bases da trigonometria. Cada conceito é explicado de forma visual 

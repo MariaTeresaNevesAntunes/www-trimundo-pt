@@ -39,7 +39,7 @@ const Home = () => {
   return (
     <>
       <SEO
-        title="MTNA-TriMundo-Descobre a Trigonometria no Mundo Real"
+        title="TriMundo — Descobre a Trigonometria no Mundo Real"
         description="Descobre a Trigonometria no Mundo Real. Aprende trigonometria de forma interativa e visual. História, conceitos fundamentais, ângulos notáveis e aplicações no mundo real."
         keywords="trigonometria, matemática, seno, cosseno, tangente, ângulos notáveis, aprender trigonometria"
         canonical="https://trimundo.pt"
