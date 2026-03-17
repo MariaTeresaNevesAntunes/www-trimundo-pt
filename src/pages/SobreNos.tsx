@@ -12,7 +12,7 @@ const SobreNos = () => {
   return (
     <>
       <SEO
-        title="MTNA-TriMundo-Sobre Nós"
+        title="Sobre Nós | TriMundo"
         description="O trimundo.pt é um projeto educativo dedicado a tornar a matemática acessível, clara e motivadora para todos os estudantes."
         canonical="https://trimundo.pt/sobre"
         structuredData={structuredData}
