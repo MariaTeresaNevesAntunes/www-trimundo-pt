@@ -15,7 +15,7 @@ const NotFound = () => {
   return (
     <>
       <SEO
-        title="MTNA-TriMundo-Página Não Encontrada"
+        title="Página Não Encontrada | TriMundo"
         description="A página que procuras não existe. Volta à página inicial do TriMundo para explorar trigonometria."
       />
       <div className="min-h-screen flex items-center justify-center bg-background">
