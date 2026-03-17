@@ -46,7 +46,7 @@ const Identidades = () => {
   return (
     <>
       <SEO
-        title="MTNA-TriMundo-Identidades Trigonométricas"
+        title="Identidades Trigonométricas | TriMundo"
         description="Descobre as identidades trigonométricas fundamentais: identidade pitagórica, quociente, recíprocas e ângulo duplo."
         keywords="identidades trigonométricas, identidade pitagórica, ângulo duplo, fórmulas trigonometria"
         canonical="https://trimundo.pt/identidades"
