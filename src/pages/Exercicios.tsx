@@ -1,264 +1,364 @@
 import { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
-import { Calculator, CheckCircle, XCircle, BookOpen } from 'lucide-react';
+import { Calculator, CheckCircle, Eye, EyeOff, BookOpen, Flame, Zap } from 'lucide-react';
 import SEO from '@/components/SEO';
 import AdBanner from '@/components/AdBanner';
 
 interface Exercise {
   id: number;
-  type: 'cosine-law' | 'trigonometric-functions';
   question: string;
-  answer: string;
   hint?: string;
-  difficulty: 'fácil' | 'médio' | 'difícil';
+  resolution?: string;
+  answer: string;
+  difficulty: 'fácil' | 'intermédio' | 'avançado';
 }
 
+const exercises: Exercise[] = [
+  // NÍVEL FÁCIL
+  {
+    id: 1,
+    question: 'Num triângulo retângulo, o cateto oposto mede 6 e a hipotenusa mede 10. Calcula sin θ.',
+    hint: 'Usa a fórmula sin θ = oposto / hipotenusa.',
+    resolution: 'sin θ = 6/10 = 3/5.',
+    answer: '3/5',
+    difficulty: 'fácil',
+  },
+  {
+    id: 2,
+    question: 'Num triângulo com lados 3, 4 e 5, determina o maior ângulo.',
+    hint: 'O maior ângulo está oposto ao maior lado.',
+    resolution: 'O maior lado é 5. O triângulo é retângulo (3² + 4² = 5²). Logo, o maior ângulo é 90°.',
+    answer: '90°',
+    difficulty: 'fácil',
+  },
+  {
+    id: 3,
+    question: 'Converte 45° para radianos.',
+    hint: 'Multiplica por π/180.',
+    resolution: '45° × π/180 = π/4.',
+    answer: 'π/4',
+    difficulty: 'fácil',
+  },
+  {
+    id: 4,
+    question: 'Indica o sinal de cos(150°).',
+    hint: '150° está no 2º quadrante.',
+    resolution: 'No 2º quadrante, o cosseno é negativo.',
+    answer: 'Negativo',
+    difficulty: 'fácil',
+  },
+  {
+    id: 5,
+    question: 'Se sin θ = 3/5 no 1º quadrante, calcula cos θ.',
+    hint: 'Usa sin²θ + cos²θ = 1.',
+    resolution: 'cos²θ = 1 - (3/5)² = 16/25 → cos θ = 4/5.',
+    answer: '4/5',
+    difficulty: 'fácil',
+  },
+  {
+    id: 6,
+    question: 'Indica as coordenadas de 0° no círculo unitário.',
+    hint: 'No círculo unitário, as coordenadas são (cos θ, sin θ).',
+    answer: '(1, 0)',
+    difficulty: 'fácil',
+  },
+  // NÍVEL INTERMÉDIO
+  {
+    id: 7,
+    question: 'Num triângulo ABC, com a = 7, b = 8 e c = 9, calcula o ângulo A.',
+    hint: 'Usa cos A = (b² + c² - a²) / (2bc).',
+    resolution: 'cos A = (64 + 81 - 49) / 144 = 2/3 → A ≈ 48,19°.',
+    answer: '48,19°',
+    difficulty: 'intermédio',
+  },
+  {
+    id: 8,
+    question: 'Num triângulo, a = 12, A = 30° e B = 45°. Calcula b.',
+    hint: 'Usa a Lei dos Senos.',
+    resolution: 'b/sin B = a/sin A → b = 12 × sin 45° / sin 30° = 12√2.',
+    answer: '12√2',
+    difficulty: 'intermédio',
+  },
+  {
+    id: 9,
+    question: 'Determina tan(45°).',
+    hint: 'No círculo unitário, tan = y/x.',
+    resolution: 'tan(45°) = sin(45°)/cos(45°) = (√2/2)/(√2/2) = 1.',
+    answer: '1',
+    difficulty: 'intermédio',
+  },
+  {
+    id: 10,
+    question: 'Calcula sin(60°) e cos(60°).',
+    hint: 'Usa o triângulo 30–60–90.',
+    resolution: 'No triângulo 30-60-90, sin(60°) = √3/2 e cos(60°) = 1/2.',
+    answer: 'sin = √3/2, cos = 1/2',
+    difficulty: 'intermédio',
+  },
+  {
+    id: 11,
+    question: 'Se sec x = 4, calcula cos x.',
+    hint: 'sec x = 1/cos x.',
+    resolution: 'cos x = 1/sec x = 1/4.',
+    answer: '1/4',
+    difficulty: 'intermédio',
+  },
+  {
+    id: 12,
+    question: 'Calcula o limite lim(x→0) sin(3x)/x.',
+    hint: 'Multiplica e divide por 3x.',
+    resolution: 'lim(x→0) sin(3x)/x = lim(x→0) 3 × [sin(3x)/(3x)] = 3 × 1 = 3.',
+    answer: '3',
+    difficulty: 'intermédio',
+  },
+  {
+    id: 13,
+    question: 'Resolve sin x = 1/2 no intervalo [0, 2π].',
+    hint: 'Identifica em que quadrantes o seno é positivo.',
+    resolution: 'sin x = 1/2 → x = π/6 (1º quadrante) e x = 5π/6 (2º quadrante).',
+    answer: 'x = π/6 e 5π/6',
+    difficulty: 'intermédio',
+  },
+  // NÍVEL AVANÇADO
+  {
+    id: 14,
+    question: 'Mostra que sin(2x) = 2 sin x cos x.',
+    hint: 'Usa sin(a+b) = sin a cos b + cos a sin b.',
+    resolution: 'sin(x+x) = sin x cos x + cos x sin x = 2 sin x cos x.',
+    answer: '2 sin x cos x',
+    difficulty: 'avançado',
+  },
+  {
+    id: 15,
+    question: 'Demonstra que 1 + cot²x = csc²x.',
+    hint: 'Divide sin²x + cos²x = 1 por sin²x.',
+    resolution: '(sin²x/sin²x) + (cos²x/sin²x) = 1/sin²x → 1 + cot²x = csc²x.',
+    answer: '1 + cot²x = csc²x',
+    difficulty: 'avançado',
+  },
+  {
+    id: 16,
+    question: 'Calcula lim(x→0) tan(5x)/sin(2x).',
+    hint: 'tan(kx) ≈ kx e sin(kx) ≈ kx quando x→0.',
+    resolution: 'lim(x→0) tan(5x)/sin(2x) ≈ lim(x→0) 5x/(2x) = 5/2.',
+    answer: '5/2',
+    difficulty: 'avançado',
+  },
+  {
+    id: 17,
+    question: 'Um pêndulo forma 12° com a vertical. A força total é 40 N. Determina a componente horizontal.',
+    hint: 'Fh = F × sin θ.',
+    resolution: 'Fh = 40 × sin(12°) = 40 × 0,2079 ≈ 8,32 N.',
+    answer: '8,32 N',
+    difficulty: 'avançado',
+  },
+  {
+    id: 18,
+    question: 'Um barco desloca-se 12 km para leste e 5 km para norte. Determina a direção final.',
+    hint: 'tan θ = cateto oposto / cateto adjacente.',
+    resolution: 'tan θ = 5/12 → θ = arctan(5/12) ≈ 22,62°.',
+    answer: '22,62° a norte do leste',
+    difficulty: 'avançado',
+  },
+  {
+    id: 19,
+    question: 'Uma rampa tem 1,2 m de altura e 8 m de comprimento. Determina o ângulo de inclinação.',
+    hint: 'sin θ = altura / hipotenusa.',
+    resolution: 'sin θ = 1,2/8 = 0,15 → θ = arcsin(0,15) ≈ 8,63°.',
+    answer: '8,63°',
+    difficulty: 'avançado',
+  },
+  {
+    id: 20,
+    question: 'Determina o período e a amplitude de f(x) = 3 sin(2x).',
+    hint: 'Amplitude = |A|, Período = 2π/|B| para f(x) = A sin(Bx).',
+    resolution: 'Amplitude = |3| = 3. Período = 2π/|2| = π.',
+    answer: 'Amplitude = 3; Período = π',
+    difficulty: 'avançado',
+  },
+];
+
 const Exercicios = () => {
-  const [selectedType, setSelectedType] = useState<'all' | 'cosine-law' | 'trigonometric-functions'>('all');
-  const [userAnswers, setUserAnswers] = useState<{[key: number]: string}>({});
-  const [checkedAnswers, setCheckedAnswers] = useState<{[key: number]: boolean}>({});
-  const [showResults, setShowResults] = useState<{[key: number]: boolean}>({});
+  const [selectedDifficulty, setSelectedDifficulty] = useState<'all' | 'fácil' | 'intermédio' | 'avançado'>('all');
+  const [revealedExercises, setRevealedExercises] = useState<{ [key: number]: boolean }>({});
 
-  const exercises: Exercise[] = [
-    {
-      id: 1,
-      type: 'cosine-law',
-      question: 'No triângulo ABC, α=60°, b=4 e c=5. Calcular o lado a.',
-      answer: '√21 ≈ 4,58',
-      hint: 'Use a fórmula: a² = b² + c² - 2bc cos α',
-      difficulty: 'médio'
-    },
-    {
-      id: 2,
-      type: 'cosine-law',
-      question: 'Em um triângulo, os lados medem 3, 4 e 5. Qual é o maior ângulo?',
-      answer: '90°',
-      hint: 'O maior ângulo está oposto ao maior lado',
-      difficulty: 'fácil'
-    },
-    {
-      id: 3,
-      type: 'trigonometric-functions',
-      question: 'Calcule sen(240°), cos(240°) e tan(240°).',
-      answer: 'sen(240°) = -√3/2, cos(240°) = -1/2, tan(240°) = √3',
-      hint: '240° = 180° + 60°, use as propriedades do terceiro quadrante',
-      difficulty: 'médio'
-    },
-    {
-      id: 4,
-      type: 'trigonometric-functions',
-      question: 'Calcule sen(150°), cos(150°) e tan(150°).',
-      answer: 'sen(150°) = 1/2, cos(150°) = -√3/2, tan(150°) = -√3/3',
-      hint: '150° = 180° - 30°, use as propriedades do segundo quadrante',
-      difficulty: 'médio'
-    },
-    {
-      id: 5,
-      type: 'cosine-law',
-      question: 'No triângulo ABC, a=7, b=8 e c=9. Calcule o ângulo A.',
-      answer: '60° (aproximadamente)',
-      hint: 'Use: cos A = (b² + c² - a²) / (2bc)',
-      difficulty: 'difícil'
-    },
-    {
-      id: 6,
-      type: 'trigonometric-functions',
-      question: 'Se sen θ = 3/5 e θ está no primeiro quadrante, calcule cos θ e tan θ.',
-      answer: 'cos θ = 4/5, tan θ = 3/4',
-      hint: 'Use a identidade fundamental: sen²θ + cos²θ = 1',
-      difficulty: 'fácil'
-    }
-  ];
+  const filteredExercises = selectedDifficulty === 'all'
+    ? exercises
+    : exercises.filter(ex => ex.difficulty === selectedDifficulty);
 
-  const filteredExercises = selectedType === 'all' 
-    ? exercises 
-    : exercises.filter(ex => ex.type === selectedType);
-
-  const handleAnswerChange = (exerciseId: number, value: string) => {
-    setUserAnswers(prev => ({
-      ...prev,
-      [exerciseId]: value
-    }));
-  };
-
-  const checkAnswer = (exerciseId: number) => {
-    const exercise = exercises.find(ex => ex.id === exerciseId);
-    const userAnswer = userAnswers[exerciseId]?.trim().toLowerCase();
-    const correctAnswer = exercise?.answer.toLowerCase();
-    
-    const isCorrect = userAnswer && correctAnswer && 
-      (userAnswer.includes(correctAnswer.split(' ')[0]) || 
-       correctAnswer.includes(userAnswer));
-    
-    setCheckedAnswers(prev => ({
-      ...prev,
-      [exerciseId]: isCorrect
-    }));
-    
-    setShowResults(prev => ({
-      ...prev,
-      [exerciseId]: true
-    }));
+  const toggleReveal = (id: number) => {
+    setRevealedExercises(prev => ({ ...prev, [id]: !prev[id] }));
   };
 
   const getDifficultyColor = (difficulty: string) => {
     switch (difficulty) {
-      case 'fácil': return 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300';
-      case 'médio': return 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300';
-      case 'difícil': return 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300';
-      default: return 'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-300';
+      case 'fácil': return 'bg-emerald-100 text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-300';
+      case 'intermédio': return 'bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300';
+      case 'avançado': return 'bg-rose-100 text-rose-800 dark:bg-rose-900/40 dark:text-rose-300';
+      default: return 'bg-muted text-muted-foreground';
     }
   };
+
+  const getDifficultyIcon = (difficulty: string) => {
+    switch (difficulty) {
+      case 'fácil': return <BookOpen className="w-3.5 h-3.5" />;
+      case 'intermédio': return <Flame className="w-3.5 h-3.5" />;
+      case 'avançado': return <Zap className="w-3.5 h-3.5" />;
+      default: return null;
+    }
+  };
+
+  const groupedByDifficulty = (list: Exercise[]) => {
+    const groups: { label: string; key: string; items: Exercise[] }[] = [];
+    const order: Array<'fácil' | 'intermédio' | 'avançado'> = ['fácil', 'intermédio', 'avançado'];
+    for (const d of order) {
+      const items = list.filter(ex => ex.difficulty === d);
+      if (items.length > 0) {
+        groups.push({ label: d === 'fácil' ? 'Nível Fácil' : d === 'intermédio' ? 'Nível Intermédio' : 'Nível Avançado', key: d, items });
+      }
+    }
+    return groups;
+  };
+
+  const groups = groupedByDifficulty(filteredExercises);
 
   return (
     <>
       <SEO
         title="Exercícios de Trigonometria | TriMundo"
-        description="Pratica exercícios de trigonometria interativos: lei dos cossenos, funções trigonométricas e verificação de respostas em tempo real."
-        keywords="exercícios trigonometria, lei dos cossenos, prática matemática, exercícios interativos"
+        description="20 exercícios de trigonometria organizados por nível de dificuldade: fácil, intermédio e avançado. Pratica com resoluções detalhadas passo a passo."
+        keywords="exercícios trigonometria, lei dos cossenos, lei dos senos, limites trigonométricos, identidades trigonométricas, prática matemática"
         canonical="https://trimundo.pt/exercicios"
         structuredData={{
           "@context": "https://schema.org",
           "@type": "Quiz",
           "name": "Exercícios de Trigonometria",
-          "description": "Exercícios interativos de trigonometria com verificação automática",
+          "description": "20 exercícios interativos de trigonometria organizados por nível de dificuldade",
+          "educationalLevel": ["Beginner", "Intermediate", "Advanced"],
           "publisher": { "@type": "Organization", "name": "TriMundo", "url": "https://trimundo.pt" }
         }}
       />
-    <main className="min-h-screen bg-gradient-subtle py-12">
-      <div className="container mx-auto px-4 max-w-4xl">
-        {/* Header */}
-        <div className="text-center mb-12 animate-slide-up">
-          <div className="flex items-center justify-center gap-4 mb-6">
-            <Calculator className="w-12 h-12 text-primary animate-pulse-soft" />
-            <h1 className="heading-xl text-gradient">Exercícios de</h1>
-          </div>
-          <h2 className="heading-xl text-gradient mb-6">Trigonometria</h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Pratique seus conhecimentos com exercícios sobre Lei dos Cossenos e funções trigonométricas
-          </p>
-        </div>
-
-        {/* Filter Buttons */}
-        <div className="flex flex-wrap gap-4 mb-8 justify-center animate-slide-up" style={{ animationDelay: '0.1s' }}>
-          <Button 
-            variant={selectedType === 'all' ? 'default' : 'outline'}
-            onClick={() => setSelectedType('all')}
-            className="gap-2"
-          >
-            <BookOpen className="w-4 h-4" />
-            Todos os Exercícios
-          </Button>
-          <Button 
-            variant={selectedType === 'cosine-law' ? 'default' : 'outline'}
-            onClick={() => setSelectedType('cosine-law')}
-          >
-            Lei dos Cossenos
-          </Button>
-          <Button 
-            variant={selectedType === 'trigonometric-functions' ? 'default' : 'outline'}
-            onClick={() => setSelectedType('trigonometric-functions')}
-          >
-            Funções Trigonométricas
-          </Button>
-        </div>
-
-        {/* Ad Banner */}
-        <AdBanner adSlot="7890123456" adFormat="horizontal" />
-
-        {/* Exercises Grid */}
-        <div className="grid gap-6">
-          {filteredExercises.map((exercise, index) => (
-            <Card 
-              key={exercise.id} 
-              className="math-card hover:shadow-elegant transition-all duration-300 animate-slide-up"
-              style={{ animationDelay: `${0.2 + index * 0.1}s` }}
-            >
-              <CardHeader>
-                <div className="flex items-start justify-between gap-4">
-                  <div className="flex-1">
-                    <CardTitle className="heading-md mb-2">
-                      Exercício {exercise.id}
-                    </CardTitle>
-                    <CardDescription className="text-base leading-relaxed">
-                      {exercise.question}
-                    </CardDescription>
-                  </div>
-                  <Badge className={getDifficultyColor(exercise.difficulty)}>
-                    {exercise.difficulty}
-                  </Badge>
-                </div>
-              </CardHeader>
-              
-              <CardContent className="space-y-4">
-                {exercise.hint && (
-                  <div className="p-3 bg-muted/50 rounded-lg border-l-4 border-primary/50">
-                    <p className="text-sm text-foreground">
-                      <strong>Dica:</strong> {exercise.hint}
-                    </p>
-                  </div>
-                )}
-                
-                <div className="flex gap-3">
-                  <Input
-                    placeholder="Digite sua resposta..."
-                    value={userAnswers[exercise.id] || ''}
-                    onChange={(e) => handleAnswerChange(exercise.id, e.target.value)}
-                    className="flex-1"
-                  />
-                  <Button 
-                    onClick={() => checkAnswer(exercise.id)}
-                    disabled={!userAnswers[exercise.id]?.trim()}
-                    className="gap-2"
-                  >
-                    <Calculator className="w-4 h-4" />
-                    Verificar
-                  </Button>
-                </div>
-                
-                {showResults[exercise.id] && (
-                  <div className={`p-3 rounded-lg flex items-center gap-3 ${
-                    checkedAnswers[exercise.id] 
-                      ? 'bg-green-50 dark:bg-green-950 border border-green-200 dark:border-green-800' 
-                      : 'bg-red-50 dark:bg-red-950 border border-red-200 dark:border-red-800'
-                  }`}>
-                    {checkedAnswers[exercise.id] ? (
-                      <>
-                        <CheckCircle className="w-5 h-5 text-green-600 dark:text-green-400" />
-                        <span className="text-green-700 dark:text-green-300 font-medium">
-                          Correto! Parabéns!
-                        </span>
-                      </>
-                    ) : (
-                      <>
-                        <XCircle className="w-5 h-5 text-red-600 dark:text-red-400" />
-                        <div className="text-red-700 dark:text-red-300">
-                          <span className="font-medium">Incorreto.</span>
-                          <div className="mt-1 text-sm">
-                            <strong>Resposta correta:</strong> {exercise.answer}
-                          </div>
-                        </div>
-                      </>
-                    )}
-                  </div>
-                )}
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-
-        {filteredExercises.length === 0 && (
-          <div className="text-center py-12">
-            <p className="text-muted-foreground text-lg">
-              Nenhum exercício encontrado para o filtro selecionado.
+      <main className="min-h-screen bg-gradient-subtle py-12">
+        <div className="container mx-auto px-4 max-w-4xl">
+          {/* Header */}
+          <div className="text-center mb-12 animate-slide-up">
+            <div className="flex items-center justify-center gap-4 mb-4">
+              <Calculator className="w-12 h-12 text-primary" />
+            </div>
+            <h1 className="heading-xl text-gradient mb-4">Exercícios de Trigonometria</h1>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              20 exercícios organizados por nível de dificuldade. Tenta resolver antes de revelar a resolução!
             </p>
           </div>
-        )}
-      </div>
-    </main>
+
+          {/* Filter Buttons */}
+          <div className="flex flex-wrap gap-3 mb-10 justify-center animate-slide-up" style={{ animationDelay: '0.1s' }}>
+            {[
+              { key: 'all' as const, label: 'Todos (20)', icon: <BookOpen className="w-4 h-4" /> },
+              { key: 'fácil' as const, label: 'Fácil (6)', icon: <BookOpen className="w-4 h-4" /> },
+              { key: 'intermédio' as const, label: 'Intermédio (7)', icon: <Flame className="w-4 h-4" /> },
+              { key: 'avançado' as const, label: 'Avançado (7)', icon: <Zap className="w-4 h-4" /> },
+            ].map(btn => (
+              <Button
+                key={btn.key}
+                variant={selectedDifficulty === btn.key ? 'default' : 'outline'}
+                onClick={() => setSelectedDifficulty(btn.key)}
+                className="gap-2"
+              >
+                {btn.icon}
+                {btn.label}
+              </Button>
+            ))}
+          </div>
+
+          <AdBanner adSlot="7890123456" adFormat="horizontal" />
+
+          {/* Exercises by group */}
+          <div className="space-y-10">
+            {groups.map(group => (
+              <section key={group.key}>
+                <h2 className="heading-lg mb-6 flex items-center gap-3">
+                  {getDifficultyIcon(group.key)}
+                  {group.label}
+                </h2>
+                <div className="grid gap-5">
+                  {group.items.map((exercise, index) => {
+                    const isRevealed = revealedExercises[exercise.id];
+                    return (
+                      <Card
+                        key={exercise.id}
+                        className="hover:shadow-elegant transition-all duration-300 animate-slide-up"
+                        style={{ animationDelay: `${0.15 + index * 0.05}s` }}
+                      >
+                        <CardHeader className="pb-3">
+                          <div className="flex items-start justify-between gap-4">
+                            <div className="flex-1">
+                              <CardTitle className="heading-md mb-1.5">
+                                Exercício {exercise.id}
+                              </CardTitle>
+                              <CardDescription className="text-base leading-relaxed text-foreground/80">
+                                {exercise.question}
+                              </CardDescription>
+                            </div>
+                            <Badge className={`${getDifficultyColor(exercise.difficulty)} flex items-center gap-1.5 shrink-0`}>
+                              {getDifficultyIcon(exercise.difficulty)}
+                              {exercise.difficulty}
+                            </Badge>
+                          </div>
+                        </CardHeader>
+
+                        <CardContent className="space-y-3 pt-0">
+                          {exercise.hint && (
+                            <div className="p-3 bg-muted/50 rounded-lg border-l-4 border-primary/50">
+                              <p className="text-sm text-foreground">
+                                <strong>💡 Dica:</strong> {exercise.hint}
+                              </p>
+                            </div>
+                          )}
+
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            onClick={() => toggleReveal(exercise.id)}
+                            className="gap-2"
+                          >
+                            {isRevealed ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                            {isRevealed ? 'Ocultar Resolução' : 'Ver Resolução'}
+                          </Button>
+
+                          {isRevealed && (
+                            <div className="p-4 bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-200 dark:border-emerald-800 rounded-lg space-y-2 animate-slide-up">
+                              {exercise.resolution && (
+                                <p className="text-sm text-foreground">
+                                  <strong>📝 Resolução:</strong> {exercise.resolution}
+                                </p>
+                              )}
+                              <p className="text-sm font-semibold text-emerald-700 dark:text-emerald-300 flex items-center gap-2">
+                                <CheckCircle className="w-4 h-4" />
+                                Resultado Final: {exercise.answer}
+                              </p>
+                            </div>
+                          )}
+                        </CardContent>
+                      </Card>
+                    );
+                  })}
+                </div>
+              </section>
+            ))}
+          </div>
+
+          {filteredExercises.length === 0 && (
+            <div className="text-center py-12">
+              <p className="text-muted-foreground text-lg">
+                Nenhum exercício encontrado para o filtro selecionado.
+              </p>
+            </div>
+          )}
+        </div>
+      </main>
     </>
   );
 };
