@@ -16,35 +16,35 @@ const Historia = () => {
     {
       period: "2000 a.C.",
       title: "Babilónios",
-      description: "Primeiras tabelas de relações trigonométricas para astronomia e construção.",
+      description: "Os babilónios criaram as primeiras tabelas de relações trigonométricas, gravadas em tabletes de argila, para resolver problemas de astronomia e construção. A famosa tabela Plimpton 322 contém ternos pitagóricos que demonstram um conhecimento avançado de relações entre lados de triângulos retângulos.",
       icon: <Star className="w-6 h-6" />,
       color: "blue"
     },
     {
       period: "300 a.C.",
       title: "Gregos Antigos",
-      description: "Hiparco desenvolve os primeiros catálogos estelares usando trigonometria.",
+      description: "Hiparco de Niceia, considerado o pai da trigonometria, desenvolveu as primeiras tabelas de cordas — precursoras das tabelas de senos — para mapear posições estelares com precisão. Ptolomeu, no seu tratado Almagesto, expandiu este trabalho e criou tabelas trigonométricas usadas durante mais de mil anos.",
       icon: <MapPin className="w-6 h-6" />,
       color: "green"
     },
     {
       period: "800 d.C.",
       title: "Matemáticos Árabes",
-      description: "Al-Battani cria tabelas trigonométricas precisas e desenvolve novas técnicas.",
+      description: "Al-Battani introduziu a função seno como a conhecemos hoje, substituindo as tabelas de cordas gregas por tabelas de senos mais práticas. Al-Khwarizmi e outros matemáticos islâmicos desenvolveram também as funções tangente e cotangente, revolucionando a precisão dos cálculos astronómicos e de navegação.",
       icon: <Calculator className="w-6 h-6" />,
       color: "purple"
     },
     {
       period: "1400-1500",
       title: "Era dos Descobrimentos",
-      description: "Navegadores portugueses usam trigonometria para explorar novos mundos.",
+      description: "Os navegadores portugueses, como Vasco da Gama e Pedro Álvares Cabral, utilizaram instrumentos como o astrolábio e o quadrante para calcular latitudes através de funções trigonométricas. Sem estes cálculos, a rota marítima para a Índia e a descoberta do Brasil não teriam sido possíveis. Portugal tornou-se pioneiro na navegação astronómica.",
       icon: <Compass className="w-6 h-6" />,
       color: "orange"
     },
     {
       period: "1600-1700",
       title: "Revolução Científica",
-      description: "Newton e Leibniz aplicam trigonometria no cálculo e na física moderna.",
+      description: "Isaac Newton e Gottfried Leibniz incorporaram funções trigonométricas no cálculo infinitesimal, abrindo portas para a física moderna. Euler unificou a trigonometria com a análise matemática através da sua célebre fórmula e^(ix) = cos(x) + i·sin(x), considerada uma das mais belas da matemática.",
       icon: <Globe className="w-6 h-6" />,
       color: "blue"
     }
