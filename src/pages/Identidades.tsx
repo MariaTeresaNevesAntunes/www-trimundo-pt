@@ -17,8 +17,10 @@ const Identidades = () => {
     { pergunta: "sin(2θ) = ?", resposta: "2sin(θ)cos(θ)" },
     { pergunta: "cos(2θ) = ?", resposta: "cos²(θ) - sin²(θ)" },
     { pergunta: "tan(2θ) = ?", resposta: "2tan(θ) / (1 - tan²(θ))" },
-    { pergunta: "sin²(θ) = ?", resposta: "1 - cos²(θ)" },
-    { pergunta: "cos²(θ) = ?", resposta: "1 - sin²(θ)" },
+    { pergunta: "sin(a+b) = ?", resposta: "sin a cos b + cos a sin b" },
+    { pergunta: "cos(a+b) = ?", resposta: "cos a cos b - sin a sin b" },
+    { pergunta: "sin(θ/2) = ?", resposta: "±√[(1-cosθ)/2]" },
+    { pergunta: "cos(θ/2) = ?", resposta: "±√[(1+cosθ)/2]" },
   ];
 
   const [currentCard, setCurrentCard] = useState(0);
@@ -38,7 +40,7 @@ const Identidades = () => {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Identidades Trigonométricas Fundamentais",
-    "description": "Identidades fundamentais, de quociente, recíprocas, pitagóricas e de ângulo duplo",
+    "description": "Identidades fundamentais, de quociente, recíprocas, pitagóricas, ângulo duplo, soma e diferença, e meio ângulo",
     "publisher": { "@type": "Organization", "name": "TriMundo", "url": "https://trimundo.pt" },
     "mainEntityOfPage": "https://trimundo.pt/identidades"
   };
@@ -47,8 +49,8 @@ const Identidades = () => {
     <>
       <SEO
         title="Identidades Trigonométricas | TriMundo"
-        description="Descobre as identidades trigonométricas fundamentais: identidade pitagórica, quociente, recíprocas e ângulo duplo."
-        keywords="identidades trigonométricas, identidade pitagórica, ângulo duplo, fórmulas trigonometria"
+        description="Descobre todas as identidades trigonométricas: fundamental, pitagóricas, quociente, recíprocas, ângulo duplo, soma e diferença, meio ângulo e produto para soma."
+        keywords="identidades trigonométricas, identidade pitagórica, ângulo duplo, soma e diferença, meio ângulo, fórmulas trigonometria"
         canonical="https://trimundo.pt/identidades"
         structuredData={structuredData}
       />
@@ -82,9 +84,10 @@ const Identidades = () => {
                   sin²(x) + cos²(x) = 1
                 </span>
               </div>
-              <p className="mt-4 text-muted-foreground">
+              <p className="mt-4 text-muted-foreground leading-relaxed">
                 Esta identidade expressa que para qualquer ângulo x, a soma dos quadrados 
                 do seno e cosseno é sempre igual a 1, refletindo o Teorema de Pitágoras no círculo unitário.
+                É a identidade mais importante de toda a trigonometria, pois a maioria das outras pode ser derivada a partir desta.
               </p>
             </CardContent>
           </Card>
@@ -113,8 +116,10 @@ const Identidades = () => {
                   </span>
                 </div>
               </div>
-              <p className="mt-4 text-muted-foreground">
+              <p className="mt-4 text-muted-foreground leading-relaxed">
                 A tangente é a razão entre seno e cosseno, enquanto a cotangente é o inverso dessa razão.
+                A tangente não está definida quando cos(x) = 0 (ou seja, em x = π/2 + nπ), e a cotangente 
+                não está definida quando sin(x) = 0 (em x = nπ).
               </p>
             </CardContent>
           </Card>
@@ -127,7 +132,7 @@ const Identidades = () => {
                 3. Identidades Recíprocas
               </CardTitle>
               <CardDescription>
-                Cada função tem uma inversa
+                Cada função tem uma inversa multiplicativa
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -148,8 +153,9 @@ const Identidades = () => {
                   </span>
                 </div>
               </div>
-              <p className="mt-4 text-muted-foreground">
+              <p className="mt-4 text-muted-foreground leading-relaxed">
                 Cossecante, secante e cotangente são as funções recíprocas de seno, cosseno e tangente, respectivamente.
+                Isto significa que o produto de uma função pelo seu recíproco é sempre 1: sin(x) · csc(x) = 1.
               </p>
             </CardContent>
           </Card>
@@ -162,7 +168,7 @@ const Identidades = () => {
                 4. Identidades Pitagóricas Derivadas
               </CardTitle>
               <CardDescription>
-                A partir da identidade fundamental, temos
+                Obtidas ao dividir a identidade fundamental por cos²(x) e sin²(x)
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -178,9 +184,16 @@ const Identidades = () => {
                   </span>
                 </div>
               </div>
-              <p className="mt-4 text-muted-foreground">
-                Estas identidades são obtidas dividindo a identidade fundamental por cos²(x) e sin²(x), respectivamente.
-              </p>
+              <div className="mt-4 space-y-3 text-muted-foreground text-sm leading-relaxed">
+                <p>
+                  <strong>Demonstração da primeira:</strong> Dividindo sin²x + cos²x = 1 por cos²x: 
+                  sin²x/cos²x + 1 = 1/cos²x → tan²x + 1 = sec²x.
+                </p>
+                <p>
+                  <strong>Demonstração da segunda:</strong> Dividindo sin²x + cos²x = 1 por sin²x: 
+                  1 + cos²x/sin²x = 1/sin²x → 1 + cot²x = csc²x.
+                </p>
+              </div>
             </CardContent>
           </Card>
 
@@ -213,9 +226,128 @@ const Identidades = () => {
                   </span>
                 </div>
               </div>
-              <p className="mt-4 text-muted-foreground">
-                Estas fórmulas permitem calcular as funções trigonométricas de um ângulo duplo 
-                em termos das funções do ângulo original.
+              <div className="mt-4 text-muted-foreground leading-relaxed">
+                <p className="mb-3">
+                  Estas fórmulas permitem calcular as funções trigonométricas de um ângulo duplo 
+                  em termos das funções do ângulo original.
+                </p>
+                <p className="text-sm">
+                  <strong>Formas alternativas do cos(2x):</strong><br />
+                  cos(2x) = 2cos²(x) - 1 <em>(substituindo sin²x = 1 - cos²x)</em><br />
+                  cos(2x) = 1 - 2sin²(x) <em>(substituindo cos²x = 1 - sin²x)</em>
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Identidades de Soma e Diferença */}
+          <Card className="math-card animate-slide-up border-math-green/20 bg-math-green/5" style={{ animationDelay: '0.5s' }}>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-3 text-math-green">
+                <span className="text-2xl">➕</span>
+                6. Identidades de Soma e Diferença
+              </CardTitle>
+              <CardDescription>
+                Fórmulas para calcular funções trigonométricas da soma ou diferença de dois ângulos
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                <div className="bg-background/80 rounded-lg p-4 border math-formula text-center">
+                  <span className="text-xl font-mono text-primary">
+                    sin(a ± b) = sin a · cos b ± cos a · sin b
+                  </span>
+                </div>
+                <div className="bg-background/80 rounded-lg p-4 border math-formula text-center">
+                  <span className="text-xl font-mono text-primary">
+                    cos(a ± b) = cos a · cos b ∓ sin a · sin b
+                  </span>
+                </div>
+                <div className="bg-background/80 rounded-lg p-4 border math-formula text-center">
+                  <span className="text-xl font-mono text-primary">
+                    tan(a ± b) = (tan a ± tan b) / (1 ∓ tan a · tan b)
+                  </span>
+                </div>
+              </div>
+              <div className="mt-4 text-muted-foreground leading-relaxed">
+                <p className="mb-3">
+                  Estas fórmulas são extremamente úteis para calcular valores exatos. Por exemplo, para calcular sin(75°):
+                </p>
+                <div className="p-3 bg-card rounded-lg border font-mono text-sm">
+                  sin(75°) = sin(45° + 30°) = sin 45° · cos 30° + cos 45° · sin 30° = (√2/2)(√3/2) + (√2/2)(1/2) = (√6 + √2)/4
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Identidades de Meio Ângulo */}
+          <Card className="math-card animate-slide-up border-math-purple/20 bg-math-purple/5" style={{ animationDelay: '0.6s' }}>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-3 text-math-purple">
+                <span className="text-2xl">½</span>
+                7. Identidades de Meio Ângulo
+              </CardTitle>
+              <CardDescription>
+                Fórmulas para calcular funções trigonométricas de metade de um ângulo
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                <div className="bg-background/80 rounded-lg p-4 border math-formula text-center">
+                  <span className="text-xl font-mono text-primary">
+                    sin(x/2) = ±√[(1 - cos x) / 2]
+                  </span>
+                </div>
+                <div className="bg-background/80 rounded-lg p-4 border math-formula text-center">
+                  <span className="text-xl font-mono text-primary">
+                    cos(x/2) = ±√[(1 + cos x) / 2]
+                  </span>
+                </div>
+                <div className="bg-background/80 rounded-lg p-4 border math-formula text-center">
+                  <span className="text-xl font-mono text-primary">
+                    tan(x/2) = sin x / (1 + cos x) = (1 - cos x) / sin x
+                  </span>
+                </div>
+              </div>
+              <p className="mt-4 text-muted-foreground leading-relaxed">
+                O sinal (± ) depende do quadrante em que se encontra x/2. Estas fórmulas são derivadas diretamente 
+                das identidades de ângulo duplo e são muito utilizadas em integrais de funções trigonométricas.
+              </p>
+            </CardContent>
+          </Card>
+
+          {/* Fórmulas Produto para Soma */}
+          <Card className="math-card animate-slide-up border-math-orange/20 bg-math-orange/5" style={{ animationDelay: '0.7s' }}>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-3 text-math-orange">
+                <span className="text-2xl">×</span>
+                8. Fórmulas Produto para Soma
+              </CardTitle>
+              <CardDescription>
+                Transformar produtos de funções trigonométricas em somas (e vice-versa)
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                <div className="bg-background/80 rounded-lg p-4 border math-formula text-center">
+                  <span className="text-lg font-mono text-primary">
+                    sin a · cos b = ½[sin(a+b) + sin(a-b)]
+                  </span>
+                </div>
+                <div className="bg-background/80 rounded-lg p-4 border math-formula text-center">
+                  <span className="text-lg font-mono text-primary">
+                    cos a · cos b = ½[cos(a-b) + cos(a+b)]
+                  </span>
+                </div>
+                <div className="bg-background/80 rounded-lg p-4 border math-formula text-center">
+                  <span className="text-lg font-mono text-primary">
+                    sin a · sin b = ½[cos(a-b) - cos(a+b)]
+                  </span>
+                </div>
+              </div>
+              <p className="mt-4 text-muted-foreground leading-relaxed">
+                Estas fórmulas permitem transformar um produto de funções trigonométricas numa soma ou diferença, 
+                o que simplifica muitos cálculos em análise matemática e processamento de sinais.
               </p>
             </CardContent>
           </Card>
@@ -223,7 +355,7 @@ const Identidades = () => {
           {/* Ad Banner */}
           <AdBanner adSlot="5678901234" adFormat="horizontal" />
 
-          {/* Flash Cards - Exercícios Interativos */}
+          {/* Flash Cards */}
           <div className="mt-16 mb-8">
             <div className="text-center mb-8">
               <h2 className="text-2xl font-bold text-foreground mb-2">Exercícios - Flash Cards</h2>
@@ -239,7 +371,6 @@ const Identidades = () => {
                   className={`absolute inset-0 transition-transform duration-500 transform-style-preserve-3d ${isFlipped ? 'rotate-y-180' : ''}`}
                   style={{ transformStyle: 'preserve-3d' }}
                 >
-                  {/* Frente - Pergunta */}
                   <div 
                     className="absolute inset-0 bg-card rounded-2xl shadow-xl flex flex-col items-center justify-center p-8 backface-hidden"
                     style={{ backfaceVisibility: 'hidden' }}
@@ -250,7 +381,6 @@ const Identidades = () => {
                     </span>
                   </div>
                   
-                  {/* Verso - Resposta */}
                   <div 
                     className="absolute inset-0 bg-card rounded-2xl shadow-xl flex flex-col items-center justify-center p-8 backface-hidden"
                     style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
@@ -263,35 +393,18 @@ const Identidades = () => {
                 </div>
               </div>
               
-              {/* Controles */}
               <div className="flex items-center justify-center gap-4 mt-6">
-                <Button 
-                  variant="outline" 
-                  onClick={prevCard}
-                  className="flex items-center gap-2"
-                >
-                  <ChevronLeft className="w-4 h-4" />
-                  Anterior
+                <Button variant="outline" onClick={prevCard} className="flex items-center gap-2">
+                  <ChevronLeft className="w-4 h-4" /> Anterior
                 </Button>
-                <Button 
-                  variant="secondary"
-                  onClick={() => setIsFlipped(!isFlipped)}
-                  className="flex items-center gap-2"
-                >
-                  <RotateCcw className="w-4 h-4" />
-                  Virar Carta
+                <Button variant="secondary" onClick={() => setIsFlipped(!isFlipped)} className="flex items-center gap-2">
+                  <RotateCcw className="w-4 h-4" /> Virar Carta
                 </Button>
-                <Button 
-                  variant="outline" 
-                  onClick={nextCard}
-                  className="flex items-center gap-2"
-                >
-                  Próximo
-                  <ChevronRight className="w-4 h-4" />
+                <Button variant="outline" onClick={nextCard} className="flex items-center gap-2">
+                  Próximo <ChevronRight className="w-4 h-4" />
                 </Button>
               </div>
               
-              {/* Contador */}
               <p className="text-center text-muted-foreground mt-4">
                 Carta {currentCard + 1} de {flashCards.length}
               </p>
@@ -307,7 +420,7 @@ const Identidades = () => {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-muted-foreground">
+              <p className="text-muted-foreground leading-relaxed">
                 <strong>Truque da memória:</strong> A identidade fundamental (sin²(x) + cos²(x) = 1) 
                 é o ponto de partida. Todas as outras identidades podem ser derivadas a partir dela 
                 usando álgebra básica e as definições das funções trigonométricas.
@@ -316,6 +429,12 @@ const Identidades = () => {
                 <p className="text-sm text-accent-foreground">
                   <strong>Para estudar:</strong> Pratique derivar uma identidade a partir da outra. 
                   Por exemplo, divida sin²(x) + cos²(x) = 1 por cos²(x) para obter tan²(x) + 1 = sec²(x)!
+                </p>
+              </div>
+              <div className="mt-4 p-4 bg-math-green/10 rounded-lg border-l-4 border-math-green">
+                <p className="text-sm text-foreground">
+                  <strong>Estratégia para as fórmulas de soma:</strong> Lembra-te que no seno a operação mantém-se 
+                  (sin(a+b) tem um +), mas no cosseno inverte-se (cos(a+b) tem um -). A tangente é sin/cos aplicado às fórmulas de soma.
                 </p>
               </div>
             </CardContent>

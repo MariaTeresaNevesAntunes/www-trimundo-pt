@@ -16,7 +16,7 @@ interface Exercise {
 }
 
 const exercises: Exercise[] = [
-  // NÍVEL FÁCIL
+  // NÍVEL FÁCIL (10)
   {
     id: 1,
     question: 'Num triângulo retângulo, o cateto oposto mede 6 e a hipotenusa mede 10. Calcula sin θ.',
@@ -64,25 +64,57 @@ const exercises: Exercise[] = [
     answer: '(1, 0)',
     difficulty: 'fácil',
   },
-  // NÍVEL INTERMÉDIO
   {
     id: 7,
+    question: 'Converte 3π/2 radianos para graus.',
+    hint: 'Multiplica por 180/π.',
+    resolution: '3π/2 × 180/π = 3 × 180/2 = 270°.',
+    answer: '270°',
+    difficulty: 'fácil',
+  },
+  {
+    id: 8,
+    question: 'Calcula tan(0°).',
+    hint: 'tan θ = sin θ / cos θ.',
+    resolution: 'tan(0°) = sin(0°)/cos(0°) = 0/1 = 0.',
+    answer: '0',
+    difficulty: 'fácil',
+  },
+  {
+    id: 9,
+    question: 'Se cos θ = 0, em que ângulos (entre 0° e 360°) isso acontece?',
+    hint: 'Pensa no círculo unitário — onde é que a coordenada x é zero?',
+    resolution: 'No círculo unitário, x = cos θ = 0 quando θ = 90° e θ = 270°.',
+    answer: '90° e 270°',
+    difficulty: 'fácil',
+  },
+  {
+    id: 10,
+    question: 'Num triângulo retângulo com hipotenusa 13 e cateto adjacente 12, calcula cos θ.',
+    hint: 'cos θ = adjacente / hipotenusa.',
+    resolution: 'cos θ = 12/13.',
+    answer: '12/13',
+    difficulty: 'fácil',
+  },
+  // NÍVEL INTERMÉDIO (10)
+  {
+    id: 11,
     question: 'Num triângulo ABC, com a = 7, b = 8 e c = 9, calcula o ângulo A.',
     hint: 'Usa cos A = (b² + c² - a²) / (2bc).',
-    resolution: 'cos A = (64 + 81 - 49) / 144 = 2/3 → A ≈ 48,19°.',
+    resolution: 'cos A = (64 + 81 - 49) / 144 = 96/144 = 2/3 → A = arccos(2/3) ≈ 48,19°.',
     answer: '48,19°',
     difficulty: 'intermédio',
   },
   {
-    id: 8,
+    id: 12,
     question: 'Num triângulo, a = 12, A = 30° e B = 45°. Calcula b.',
-    hint: 'Usa a Lei dos Senos.',
-    resolution: 'b/sin B = a/sin A → b = 12 × sin 45° / sin 30° = 12√2.',
+    hint: 'Usa a Lei dos Senos: a/sin A = b/sin B.',
+    resolution: 'b/sin 45° = 12/sin 30° → b = 12 × (√2/2) / (1/2) = 12√2.',
     answer: '12√2',
     difficulty: 'intermédio',
   },
   {
-    id: 9,
+    id: 13,
     question: 'Determina tan(45°).',
     hint: 'No círculo unitário, tan = y/x.',
     resolution: 'tan(45°) = sin(45°)/cos(45°) = (√2/2)/(√2/2) = 1.',
@@ -90,7 +122,7 @@ const exercises: Exercise[] = [
     difficulty: 'intermédio',
   },
   {
-    id: 10,
+    id: 14,
     question: 'Calcula sin(60°) e cos(60°).',
     hint: 'Usa o triângulo 30–60–90.',
     resolution: 'No triângulo 30-60-90, sin(60°) = √3/2 e cos(60°) = 1/2.',
@@ -98,7 +130,7 @@ const exercises: Exercise[] = [
     difficulty: 'intermédio',
   },
   {
-    id: 11,
+    id: 15,
     question: 'Se sec x = 4, calcula cos x.',
     hint: 'sec x = 1/cos x.',
     resolution: 'cos x = 1/sec x = 1/4.',
@@ -106,7 +138,7 @@ const exercises: Exercise[] = [
     difficulty: 'intermédio',
   },
   {
-    id: 12,
+    id: 16,
     question: 'Calcula o limite lim(x→0) sin(3x)/x.',
     hint: 'Multiplica e divide por 3x.',
     resolution: 'lim(x→0) sin(3x)/x = lim(x→0) 3 × [sin(3x)/(3x)] = 3 × 1 = 3.',
@@ -114,16 +146,40 @@ const exercises: Exercise[] = [
     difficulty: 'intermédio',
   },
   {
-    id: 13,
+    id: 17,
     question: 'Resolve sin x = 1/2 no intervalo [0, 2π].',
     hint: 'Identifica em que quadrantes o seno é positivo.',
     resolution: 'sin x = 1/2 → x = π/6 (1º quadrante) e x = 5π/6 (2º quadrante).',
     answer: 'x = π/6 e 5π/6',
     difficulty: 'intermédio',
   },
-  // NÍVEL AVANÇADO
   {
-    id: 14,
+    id: 18,
+    question: 'Simplifica a expressão: sin²x + sin²x · tan²x.',
+    hint: 'Coloca sin²x em evidência e usa 1 + tan²x = sec²x.',
+    resolution: 'sin²x(1 + tan²x) = sin²x · sec²x = sin²x / cos²x = tan²x.',
+    answer: 'tan²x',
+    difficulty: 'intermédio',
+  },
+  {
+    id: 19,
+    question: 'Calcula a área de um triângulo com lados a = 8, b = 6 e ângulo C = 30° entre eles.',
+    hint: 'Área = ½ · a · b · sin C.',
+    resolution: 'Área = ½ × 8 × 6 × sin(30°) = ½ × 8 × 6 × 0,5 = 12.',
+    answer: '12 unidades²',
+    difficulty: 'intermédio',
+  },
+  {
+    id: 20,
+    question: 'Calcula sin(75°) usando a fórmula da soma de ângulos.',
+    hint: 'sin(75°) = sin(45° + 30°).',
+    resolution: 'sin(45° + 30°) = sin 45° cos 30° + cos 45° sin 30° = (√2/2)(√3/2) + (√2/2)(1/2) = (√6 + √2)/4.',
+    answer: '(√6 + √2)/4',
+    difficulty: 'intermédio',
+  },
+  // NÍVEL AVANÇADO (10)
+  {
+    id: 21,
     question: 'Mostra que sin(2x) = 2 sin x cos x.',
     hint: 'Usa sin(a+b) = sin a cos b + cos a sin b.',
     resolution: 'sin(x+x) = sin x cos x + cos x sin x = 2 sin x cos x.',
@@ -131,7 +187,7 @@ const exercises: Exercise[] = [
     difficulty: 'avançado',
   },
   {
-    id: 15,
+    id: 22,
     question: 'Demonstra que 1 + cot²x = csc²x.',
     hint: 'Divide sin²x + cos²x = 1 por sin²x.',
     resolution: '(sin²x/sin²x) + (cos²x/sin²x) = 1/sin²x → 1 + cot²x = csc²x.',
@@ -139,7 +195,7 @@ const exercises: Exercise[] = [
     difficulty: 'avançado',
   },
   {
-    id: 16,
+    id: 23,
     question: 'Calcula lim(x→0) tan(5x)/sin(2x).',
     hint: 'tan(kx) ≈ kx e sin(kx) ≈ kx quando x→0.',
     resolution: 'lim(x→0) tan(5x)/sin(2x) ≈ lim(x→0) 5x/(2x) = 5/2.',
@@ -147,7 +203,7 @@ const exercises: Exercise[] = [
     difficulty: 'avançado',
   },
   {
-    id: 17,
+    id: 24,
     question: 'Um pêndulo forma 12° com a vertical. A força total é 40 N. Determina a componente horizontal.',
     hint: 'Fh = F × sin θ.',
     resolution: 'Fh = 40 × sin(12°) = 40 × 0,2079 ≈ 8,32 N.',
@@ -155,7 +211,7 @@ const exercises: Exercise[] = [
     difficulty: 'avançado',
   },
   {
-    id: 18,
+    id: 25,
     question: 'Um barco desloca-se 12 km para leste e 5 km para norte. Determina a direção final.',
     hint: 'tan θ = cateto oposto / cateto adjacente.',
     resolution: 'tan θ = 5/12 → θ = arctan(5/12) ≈ 22,62°.',
@@ -163,7 +219,7 @@ const exercises: Exercise[] = [
     difficulty: 'avançado',
   },
   {
-    id: 19,
+    id: 26,
     question: 'Uma rampa tem 1,2 m de altura e 8 m de comprimento. Determina o ângulo de inclinação.',
     hint: 'sin θ = altura / hipotenusa.',
     resolution: 'sin θ = 1,2/8 = 0,15 → θ = arcsin(0,15) ≈ 8,63°.',
@@ -171,11 +227,35 @@ const exercises: Exercise[] = [
     difficulty: 'avançado',
   },
   {
-    id: 20,
+    id: 27,
     question: 'Determina o período e a amplitude de f(x) = 3 sin(2x).',
     hint: 'Amplitude = |A|, Período = 2π/|B| para f(x) = A sin(Bx).',
     resolution: 'Amplitude = |3| = 3. Período = 2π/|2| = π.',
     answer: 'Amplitude = 3; Período = π',
+    difficulty: 'avançado',
+  },
+  {
+    id: 28,
+    question: 'Resolve a equação 2cos²x - cos x - 1 = 0 no intervalo [0, 2π].',
+    hint: 'Faz a substituição u = cos x e resolve a equação quadrática.',
+    resolution: '2u² - u - 1 = 0 → (2u + 1)(u - 1) = 0 → u = -1/2 ou u = 1. cos x = 1 → x = 0. cos x = -1/2 → x = 2π/3 e x = 4π/3.',
+    answer: 'x = 0, 2π/3, 4π/3',
+    difficulty: 'avançado',
+  },
+  {
+    id: 29,
+    question: 'Calcula lim(x→0) (1 - cos x) / x².',
+    hint: 'Usa a identidade 1 - cos x = 2sin²(x/2).',
+    resolution: 'lim(x→0) 2sin²(x/2)/x² = lim(x→0) 2 × [sin(x/2)/(x/2)]² × (1/4) = 2 × 1 × 1/4 = 1/2.',
+    answer: '1/2',
+    difficulty: 'avançado',
+  },
+  {
+    id: 30,
+    question: 'Demonstra que cos(3x) = 4cos³x - 3cos x.',
+    hint: 'Usa cos(3x) = cos(2x + x) e aplica as fórmulas de soma e ângulo duplo.',
+    resolution: 'cos(2x + x) = cos 2x cos x - sin 2x sin x = (2cos²x - 1)cos x - 2sin x cos x · sin x = 2cos³x - cos x - 2sin²x cos x = 2cos³x - cos x - 2(1 - cos²x)cos x = 2cos³x - cos x - 2cos x + 2cos³x = 4cos³x - 3cos x.',
+    answer: '4cos³x - 3cos x',
     difficulty: 'avançado',
   },
 ];
@@ -210,6 +290,8 @@ const Exercicios = () => {
     }
   };
 
+  const countByDifficulty = (d: string) => exercises.filter(ex => ex.difficulty === d).length;
+
   const groupedByDifficulty = (list: Exercise[]) => {
     const groups: { label: string; key: string; items: Exercise[] }[] = [];
     const order: Array<'fácil' | 'intermédio' | 'avançado'> = ['fácil', 'intermédio', 'avançado'];
@@ -227,15 +309,15 @@ const Exercicios = () => {
   return (
     <>
       <SEO
-        title="Exercícios de Trigonometria | TriMundo"
-        description="20 exercícios de trigonometria organizados por nível de dificuldade: fácil, intermédio e avançado. Pratica com resoluções detalhadas passo a passo."
-        keywords="exercícios trigonometria, lei dos cossenos, lei dos senos, limites trigonométricos, identidades trigonométricas, prática matemática"
+        title="30 Exercícios de Trigonometria Resolvidos | TriMundo"
+        description="30 exercícios de trigonometria organizados por nível de dificuldade: fácil, intermédio e avançado. Pratica com resoluções detalhadas passo a passo."
+        keywords="exercícios trigonometria, lei dos cossenos, lei dos senos, limites trigonométricos, identidades trigonométricas, prática matemática, exercícios resolvidos"
         canonical="https://trimundo.pt/exercicios"
         structuredData={{
           "@context": "https://schema.org",
           "@type": "Quiz",
           "name": "Exercícios de Trigonometria",
-          "description": "20 exercícios interativos de trigonometria organizados por nível de dificuldade",
+          "description": "30 exercícios interativos de trigonometria organizados por nível de dificuldade",
           "educationalLevel": ["Beginner", "Intermediate", "Advanced"],
           "publisher": { "@type": "Organization", "name": "TriMundo", "url": "https://trimundo.pt" }
         }}
@@ -249,17 +331,17 @@ const Exercicios = () => {
             </div>
             <h1 className="heading-xl text-gradient mb-4">Exercícios de Trigonometria</h1>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              20 exercícios organizados por nível de dificuldade. Tenta resolver antes de revelar a resolução!
+              30 exercícios organizados por nível de dificuldade. Tenta resolver antes de revelar a resolução!
             </p>
           </div>
 
           {/* Filter Buttons */}
           <div className="flex flex-wrap gap-3 mb-10 justify-center animate-slide-up" style={{ animationDelay: '0.1s' }}>
             {[
-              { key: 'all' as const, label: 'Todos (20)', icon: <BookOpen className="w-4 h-4" /> },
-              { key: 'fácil' as const, label: 'Fácil (6)', icon: <BookOpen className="w-4 h-4" /> },
-              { key: 'intermédio' as const, label: 'Intermédio (7)', icon: <Flame className="w-4 h-4" /> },
-              { key: 'avançado' as const, label: 'Avançado (7)', icon: <Zap className="w-4 h-4" /> },
+              { key: 'all' as const, label: `Todos (${exercises.length})`, icon: <BookOpen className="w-4 h-4" /> },
+              { key: 'fácil' as const, label: `Fácil (${countByDifficulty('fácil')})`, icon: <BookOpen className="w-4 h-4" /> },
+              { key: 'intermédio' as const, label: `Intermédio (${countByDifficulty('intermédio')})`, icon: <Flame className="w-4 h-4" /> },
+              { key: 'avançado' as const, label: `Avançado (${countByDifficulty('avançado')})`, icon: <Zap className="w-4 h-4" /> },
             ].map(btn => (
               <Button
                 key={btn.key}
