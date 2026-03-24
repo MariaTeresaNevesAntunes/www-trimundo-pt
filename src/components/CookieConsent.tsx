@@ -24,8 +24,7 @@ const CookieConsent = () => {
 
     if (value === 'rejected') {
       // Disable AdSense personalization
-      window.adsbygoogle = window.adsbygoogle || [];
-      window.adsbygoogle.requestNonPersonalizedAds = 1;
+      (window.adsbygoogle as any).requestNonPersonalizedAds = 1;
     }
   };
 
