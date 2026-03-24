@@ -19,6 +19,7 @@ import TermosUso from "./pages/TermosUso";
 import SobreNos from "./pages/SobreNos";
 import Contacto from "./pages/Contacto";
 import NotFound from "./pages/NotFound";
+import CookieConsent from "./components/CookieConsent";
 
 const queryClient = new QueryClient();
 
@@ -47,6 +48,7 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
+        <CookieConsent />
       </BrowserRouter>
     </TooltipProvider>
     </HelmetProvider>
