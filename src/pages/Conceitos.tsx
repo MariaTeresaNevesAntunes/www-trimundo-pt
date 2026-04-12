@@ -16,6 +16,17 @@ const Conceitos = () => {
     "mainEntityOfPage": "https://trimundo.pt/conceitos"
   };
 
+  const faqData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "O que é o seno de um ângulo?", "acceptedAnswer": { "@type": "Answer", "text": "O seno de um ângulo θ num triângulo retângulo é a razão entre o comprimento do cateto oposto a esse ângulo e o comprimento da hipotenusa: sin θ = cateto oposto / hipotenusa. No círculo unitário, o seno corresponde à coordenada y do ponto." } },
+      { "@type": "Question", "name": "O que é o círculo unitário?", "acceptedAnswer": { "@type": "Answer", "text": "O círculo unitário (ou trigonométrico) é uma circunferência de raio 1 centrada na origem do plano cartesiano. Qualquer ponto (x, y) sobre o círculo pode ser expresso como (cos θ, sin θ), onde θ é o ângulo medido a partir do eixo x positivo no sentido anti-horário." } },
+      { "@type": "Question", "name": "Qual é a relação entre seno e cosseno?", "acceptedAnswer": { "@type": "Answer", "text": "Seno e cosseno estão relacionados pela identidade fundamental: sin²θ + cos²θ = 1. Além disso, são funções complementares: sin θ = cos(90° - θ). No círculo unitário, o seno é a coordenada y e o cosseno é a coordenada x." } },
+      { "@type": "Question", "name": "O que é SOH-CAH-TOA?", "acceptedAnswer": { "@type": "Answer", "text": "SOH-CAH-TOA é uma mnemónica para lembrar as definições das funções trigonométricas: SOH (Seno = Oposto/Hipotenusa), CAH (Cosseno = Adjacente/Hipotenusa) e TOA (Tangente = Oposto/Adjacente)." } }
+    ]
+  };
+
   const concepts = {
     triangulo: {
       title: 'Triângulo Retângulo',
@@ -514,6 +525,26 @@ const Conceitos = () => {
                 <ArrowRight className="w-5 h-5" />
               </a>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="heading-lg text-gradient mb-10 text-center">Perguntas Frequentes</h2>
+          <div className="space-y-6">
+            {[
+              { q: "O que é o seno de um ângulo?", a: "O seno de um ângulo θ num triângulo retângulo é a razão entre o comprimento do cateto oposto a esse ângulo e o comprimento da hipotenusa: sin θ = cateto oposto / hipotenusa. No círculo unitário, o seno corresponde à coordenada y do ponto sobre a circunferência." },
+              { q: "O que é o círculo unitário?", a: "O círculo unitário (ou trigonométrico) é uma circunferência de raio 1 centrada na origem do plano cartesiano. Qualquer ponto (x, y) sobre o círculo pode ser expresso como (cos θ, sin θ), onde θ é o ângulo medido a partir do eixo x positivo no sentido anti-horário. É fundamental para estender as funções trigonométricas para qualquer ângulo real." },
+              { q: "Qual é a relação entre seno e cosseno?", a: "Seno e cosseno estão relacionados pela identidade fundamental: sin²θ + cos²θ = 1. São funções complementares: sin θ = cos(90° - θ). No círculo unitário, o seno é a coordenada y e o cosseno é a coordenada x. Os seus gráficos são idênticos mas deslocados de π/2." },
+              { q: "O que é a mnemónica SOH-CAH-TOA?", a: "SOH-CAH-TOA é uma mnemónica para lembrar as definições das três funções trigonométricas principais: SOH (Seno = Oposto/Hipotenusa), CAH (Cosseno = Adjacente/Hipotenusa) e TOA (Tangente = Oposto/Adjacente). É uma das formas mais simples de memorizar as razões trigonométricas." }
+            ].map((faq, i) => (
+              <div key={i} className="bg-card border border-border rounded-xl p-6 shadow-soft">
+                <h3 className="text-lg font-semibold text-foreground mb-3">{faq.q}</h3>
+                <p className="text-muted-foreground leading-relaxed">{faq.a}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
