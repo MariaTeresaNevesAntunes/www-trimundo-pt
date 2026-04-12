@@ -422,7 +422,7 @@ const Conceitos = () => {
         description="Aprende os conceitos fundamentais de trigonometria: seno, cosseno, tangente, círculo unitário, Leis dos Senos e Cossenos e relações trigonométricas."
         keywords="seno, cosseno, tangente, triângulo retângulo, círculo unitário, SOH-CAH-TOA, funções trigonométricas, lei dos senos, lei dos cossenos"
         canonical="https://trimundo.pt/conceitos"
-        structuredData={structuredData}
+        structuredData={[structuredData, faqData]}
       />
       <div className="min-h-screen pt-20">
       {/* Hero Section */}
