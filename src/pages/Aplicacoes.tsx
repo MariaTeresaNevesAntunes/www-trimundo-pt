@@ -14,6 +14,15 @@ const Aplicacoes = () => {
     "mainEntityOfPage": "https://trimundo.pt/aplicacoes"
   };
 
+  const faqData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Onde é que a trigonometria é usada no dia a dia?", "acceptedAnswer": { "@type": "Answer", "text": "A trigonometria está presente no GPS, na música, nos videojogos, nas comunicações Wi-Fi, na construção de edifícios e pontes, e nos filtros de redes sociais." } },
+      { "@type": "Question", "name": "A trigonometria é usada em videojogos?", "acceptedAnswer": { "@type": "Answer", "text": "Sim! Rotações 3D, iluminação, sombras, deteção de colisões e animações de personagens usam cálculos trigonométricos constantemente." } }
+    ]
+  };
+
   const aplicacoesData = [
     {
       categoria: "Construção e Design",
@@ -137,7 +146,7 @@ const Aplicacoes = () => {
         description="Descobre como a trigonometria é aplicada em engenharia civil, arquitetura, navegação, astronomia, física, medicina, música e videojogos com exemplos práticos e cálculos reais."
         keywords="aplicações trigonometria, engenharia, arquitetura, navegação, astronomia, GPS, música, videojogos, computação gráfica"
         canonical="https://trimundo.pt/aplicacoes"
-        structuredData={structuredData}
+        structuredData={[structuredData, faqData]}
       />
       <div className="min-h-screen bg-background">
       {/* Hero Section */}
