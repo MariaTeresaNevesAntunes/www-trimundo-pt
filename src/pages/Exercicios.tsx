@@ -313,14 +313,22 @@ const Exercicios = () => {
         description="30 exercícios de trigonometria organizados por nível de dificuldade: fácil, intermédio e avançado. Pratica com resoluções detalhadas passo a passo."
         keywords="exercícios trigonometria, lei dos cossenos, lei dos senos, limites trigonométricos, identidades trigonométricas, prática matemática, exercícios resolvidos"
         canonical="https://trimundo.pt/exercicios"
-        structuredData={{
+        structuredData={[{
           "@context": "https://schema.org",
           "@type": "Quiz",
           "name": "Exercícios de Trigonometria",
           "description": "30 exercícios interativos de trigonometria organizados por nível de dificuldade",
           "educationalLevel": ["Beginner", "Intermediate", "Advanced"],
           "publisher": { "@type": "Organization", "name": "TriMundo", "url": "https://trimundo.pt" }
-        }}
+        }, {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "Quantos exercícios de trigonometria tem o TriMundo?", "acceptedAnswer": { "@type": "Answer", "text": "O TriMundo oferece 30 exercícios de trigonometria organizados em três níveis de dificuldade: 10 exercícios fáceis (conceitos básicos), 10 intermédios (leis dos senos e cossenos, limites) e 10 avançados (demonstrações, equações e aplicações)." } },
+            { "@type": "Question", "name": "Os exercícios têm resolução detalhada?", "acceptedAnswer": { "@type": "Answer", "text": "Sim, todos os 30 exercícios incluem dicas para orientação, resolução detalhada passo a passo e resultado final. A resolução pode ser revelada clicando no botão 'Ver Resolução' em cada exercício." } },
+            { "@type": "Question", "name": "Para que nível escolar são os exercícios?", "acceptedAnswer": { "@type": "Answer", "text": "Os exercícios abrangem desde o 9º ano até ao 12º ano e início do ensino superior. Os exercícios fáceis cobrem conceitos do 9º-10º ano, os intermédios do 10º-11º ano, e os avançados do 11º-12º ano e universidade." } }
+          ]
+        }]}
       />
       <main className="min-h-screen bg-gradient-subtle py-12">
         <div className="container mx-auto px-4 max-w-4xl">
@@ -439,6 +447,23 @@ const Exercicios = () => {
               </p>
             </div>
           )}
+
+          {/* FAQ Section */}
+          <section className="mt-16">
+            <h2 className="heading-lg text-gradient mb-8 text-center">Perguntas Frequentes</h2>
+            <div className="space-y-6">
+              {[
+                { q: "Quantos exercícios de trigonometria tem o TriMundo?", a: "O TriMundo oferece 30 exercícios de trigonometria organizados em três níveis: 10 fáceis (conceitos básicos como razões trigonométricas e conversão de ângulos), 10 intermédios (lei dos senos e cossenos, identidades, limites) e 10 avançados (demonstrações, equações trigonométricas e aplicações práticas)." },
+                { q: "Os exercícios têm resolução detalhada?", a: "Sim, todos os 30 exercícios incluem dicas para te orientar, resolução detalhada passo a passo e resultado final. Podes revelar a resolução clicando no botão 'Ver Resolução' — mas tenta resolver primeiro!" },
+                { q: "Para que nível escolar são os exercícios?", a: "Os exercícios abrangem desde o 9º ano até ao 12º ano e início do ensino superior. Os fáceis cobrem o 9º-10º ano (razões trigonométricas, conversão de ângulos), os intermédios o 10º-11º ano (leis dos senos e cossenos, identidades) e os avançados o 11º-12º ano e universidade (limites, equações, demonstrações)." }
+              ].map((faq, i) => (
+                <div key={i} className="bg-card border border-border rounded-xl p-6 shadow-soft">
+                  <h3 className="text-lg font-semibold text-foreground mb-3">{faq.q}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{faq.a}</p>
+                </div>
+              ))}
+            </div>
+          </section>
         </div>
       </main>
     </>

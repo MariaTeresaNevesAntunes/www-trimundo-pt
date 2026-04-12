@@ -10,12 +10,12 @@ const Navigation = () => {
     { path: '/', label: 'Início' },
     { path: '/historia', label: 'História' },
     { path: '/conceitos', label: 'Conceitos' },
+    { path: '/funcoes-trigonometricas', label: 'Funções' },
     { path: '/angulos-notaveis', label: 'Ângulos Notáveis' },
     { path: '/identidades', label: 'Identidades' },
     { path: '/limites-trigonometricos', label: 'Limites' },
     { path: '/exercicios', label: 'Exercícios' },
     { path: '/aplicacoes', label: 'Aplicações' },
-    { path: '/contacto', label: 'Contacto' },
   ];
 
   const isActivePath = (path: string) => location.pathname === path;

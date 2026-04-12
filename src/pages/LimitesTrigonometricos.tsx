@@ -435,6 +435,23 @@ const LimitesTrigonometricos = () => {
             Pratica reconhecer padrões e usar identidades trigonométricas para simplificar!
           </p>
         </Card>
+
+        {/* FAQ Section */}
+        <div className="mt-12">
+          <h2 className="text-2xl font-bold mb-6 text-primary text-center">Perguntas Frequentes</h2>
+          <div className="space-y-6">
+            {[
+              { q: "O que é o limite fundamental da trigonometria?", a: "O limite fundamental é lim(x→0) [sin(x)/x] = 1. Isto significa que, quando x se aproxima de zero, a razão entre sin(x) e x aproxima-se de 1. Este limite é a base para calcular derivadas de funções trigonométricas e é o mais importante de toda a trigonometria." },
+              { q: "Por que é que lim(x→0) sin(x)/x não é simplesmente 0/0?", a: "A expressão 0/0 é uma indeterminação, não um número. Quando x se aproxima de 0, tanto sin(x) como x se aproximam de 0, mas a razão entre eles tem um comportamento bem definido que tende para 1. O limite descreve o comportamento 'no limite', não uma divisão propriamente dita." },
+              { q: "Como resolver limites trigonométricos mais complexos?", a: "A estratégia é manipular a expressão para reconhecer o limite fundamental. Técnicas comuns incluem: multiplicar e dividir por constantes para obter sin(ax)/(ax), usar identidades trigonométricas como 1-cos(x) = 2sin²(x/2), e separar em produtos de limites conhecidos." }
+            ].map((faq, i) => (
+              <div key={i} className="bg-card border border-border rounded-xl p-6 shadow-soft">
+                <h3 className="text-lg font-semibold text-foreground mb-3">{faq.q}</h3>
+                <p className="text-muted-foreground leading-relaxed">{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );

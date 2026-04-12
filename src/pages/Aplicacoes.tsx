@@ -14,6 +14,15 @@ const Aplicacoes = () => {
     "mainEntityOfPage": "https://trimundo.pt/aplicacoes"
   };
 
+  const faqData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Onde é que a trigonometria é usada no dia a dia?", "acceptedAnswer": { "@type": "Answer", "text": "A trigonometria está presente no GPS, na música, nos videojogos, nas comunicações Wi-Fi, na construção de edifícios e pontes, e nos filtros de redes sociais." } },
+      { "@type": "Question", "name": "A trigonometria é usada em videojogos?", "acceptedAnswer": { "@type": "Answer", "text": "Sim! Rotações 3D, iluminação, sombras, deteção de colisões e animações de personagens usam cálculos trigonométricos constantemente." } }
+    ]
+  };
+
   const aplicacoesData = [
     {
       categoria: "Construção e Design",
@@ -137,7 +146,7 @@ const Aplicacoes = () => {
         description="Descobre como a trigonometria é aplicada em engenharia civil, arquitetura, navegação, astronomia, física, medicina, música e videojogos com exemplos práticos e cálculos reais."
         keywords="aplicações trigonometria, engenharia, arquitetura, navegação, astronomia, GPS, música, videojogos, computação gráfica"
         canonical="https://trimundo.pt/aplicacoes"
-        structuredData={structuredData}
+        structuredData={[structuredData, faqData]}
       />
       <div className="min-h-screen bg-background">
       {/* Hero Section */}
@@ -326,6 +335,26 @@ const Aplicacoes = () => {
                 <div className="text-muted-foreground">Precisão Universal</div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="heading-lg text-gradient mb-10 text-center">Perguntas Frequentes</h2>
+          <div className="space-y-6">
+            {[
+              { q: "Onde é que a trigonometria é usada no dia a dia?", a: "A trigonometria está presente em muitas situações do quotidiano: no GPS do telemóvel (triangulação), na música que ouves (ondas sonoras), nos videojogos que jogas (gráficos 3D), nas comunicações Wi-Fi (modulação de sinais), na construção de edifícios e pontes (cálculo de ângulos e forças), e até nos filtros de redes sociais (visão computacional)." },
+              { q: "Os engenheiros usam trigonometria?", a: "Sim, a trigonometria é absolutamente essencial na engenharia. Engenheiros civis usam-na para calcular forças em estruturas, inclinações e estabilidade. Engenheiros eletrotécnicos modelam correntes alternadas com funções sinusoidais. Engenheiros de telecomunicações usam-na para modular sinais de rádio e Wi-Fi. Engenheiros aeroespaciais calculam trajetórias e órbitas." },
+              { q: "Como é que a trigonometria é usada na medicina?", a: "A trigonometria é fundamental em imagiologia médica. A tomografia computorizada (TC) usa a transformada de Radon (baseada em integrais trigonométricas) para reconstruir imagens de cortes do corpo. A ressonância magnética usa transformadas de Fourier. A ultrassonografia calcula ângulos de emissão e receção de ondas sonoras. A radioterapia utiliza cálculos trigonométricos para direcionar a radiação com precisão." },
+              { q: "A trigonometria é usada em videojogos?", a: "Sim, constantemente! As rotações de objetos 3D usam matrizes baseadas em seno e cosseno. O cálculo de iluminação e sombras depende dos ângulos de incidência da luz. A deteção de colisões entre objetos, os movimentos de câmara e as animações de personagens também recorrem a cálculos trigonométricos. Sem trigonometria, os videojogos modernos não existiriam." }
+            ].map((faq, i) => (
+              <div key={i} className="bg-card border border-border rounded-xl p-6 shadow-soft">
+                <h3 className="text-lg font-semibold text-foreground mb-3">{faq.q}</h3>
+                <p className="text-muted-foreground leading-relaxed">{faq.a}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
