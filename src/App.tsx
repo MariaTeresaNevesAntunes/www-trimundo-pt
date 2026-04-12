@@ -9,6 +9,7 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Historia from "./pages/Historia";
 import Conceitos from "./pages/Conceitos";
+import FuncoesTrigonometricas from "./pages/FuncoesTrigonometricas";
 import AngulosNotaveis from "./pages/AngulosNotaveis";
 import Identidades from "./pages/Identidades";
 import Exercicios from "./pages/Exercicios";
