@@ -452,8 +452,6 @@ const LimitesTrigonometricos = () => {
             ))}
           </div>
         </div>
-          </p>
-        </Card>
       </div>
     </div>
   );
