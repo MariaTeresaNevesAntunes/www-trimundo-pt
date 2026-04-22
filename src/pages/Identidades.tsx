@@ -426,7 +426,7 @@ const Identidades = () => {
                 usando álgebra básica e as definições das funções trigonométricas.
               </p>
               <div className="mt-4 p-4 bg-accent/10 rounded-lg border-l-4 border-accent">
-                <p className="text-sm text-accent-foreground">
+                <p className="text-sm text-foreground">
                   <strong>Para estudar:</strong> Pratique derivar uma identidade a partir da outra. 
                   Por exemplo, divida sin²(x) + cos²(x) = 1 por cos²(x) para obter tan²(x) + 1 = sec²(x)!
                 </p>
