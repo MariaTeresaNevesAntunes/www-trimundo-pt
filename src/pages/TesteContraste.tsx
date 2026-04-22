@@ -20,10 +20,10 @@ const TesteContraste = () => {
   ];
 
   const mathColors = [
-    { name: "math-blue", label: "Azul" },
-    { name: "math-green", label: "Verde" },
-    { name: "math-purple", label: "Roxo" },
-    { name: "math-orange", label: "Laranja" },
+    { label: "Azul", soft: "bg-math-blue/10 border-math-blue/20", text: "text-math-blue", solid: "bg-math-blue" },
+    { label: "Verde", soft: "bg-math-green/10 border-math-green/20", text: "text-math-green", solid: "bg-math-green" },
+    { label: "Roxo", soft: "bg-math-purple/10 border-math-purple/20", text: "text-math-purple", solid: "bg-math-purple" },
+    { label: "Laranja", soft: "bg-math-orange/10 border-math-orange/20", text: "text-math-orange", solid: "bg-math-orange" },
   ];
 
   return (
@@ -162,13 +162,13 @@ const TesteContraste = () => {
             </CardHeader>
             <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {mathColors.map((c) => (
-                <div key={c.name} className="space-y-2">
-                  <div className={`p-4 bg-${c.name}/10 border border-${c.name}/20 rounded-lg`}>
-                    <h4 className={`font-semibold text-${c.name} mb-1`}>{c.label} — sobre /10</h4>
-                    <p className="text-sm text-foreground">Texto foreground sobre fundo {c.name}/10.</p>
+                <div key={c.label} className="space-y-2">
+                  <div className={`p-4 ${c.soft} border rounded-lg`}>
+                    <h4 className={`font-semibold ${c.text} mb-1`}>{c.label} — sobre /10</h4>
+                    <p className="text-sm text-foreground">Texto foreground sobre fundo suave.</p>
                   </div>
-                  <div className={`p-4 bg-${c.name} rounded-lg`}>
-                    <p className="text-sm text-white font-medium">Texto branco sobre {c.name} sólido.</p>
+                  <div className={`p-4 ${c.solid} rounded-lg`}>
+                    <p className="text-sm text-white font-medium">Texto branco sobre cor sólida.</p>
                   </div>
                 </div>
               ))}
