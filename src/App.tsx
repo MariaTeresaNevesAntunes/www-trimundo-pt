@@ -19,6 +19,7 @@ import PoliticaPrivacidade from "./pages/PoliticaPrivacidade";
 import TermosUso from "./pages/TermosUso";
 import SobreNos from "./pages/SobreNos";
 import Contacto from "./pages/Contacto";
+import TesteContraste from "./pages/TesteContraste";
 import NotFound from "./pages/NotFound";
 import CookieConsent from "./components/CookieConsent";
 
@@ -46,6 +47,7 @@ const App = () => (
           <Route path="/termos-uso" element={<TermosUso />} />
           <Route path="/sobre" element={<SobreNos />} />
           <Route path="/contacto" element={<Contacto />} />
+          <Route path="/teste-contraste" element={<TesteContraste />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
