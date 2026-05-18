@@ -13,6 +13,20 @@ const Footer = () => {
           </div>
           <nav className="flex flex-wrap justify-center gap-4 text-sm">
             <Link 
+              to="/artigos" 
+              className="text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Artigos
+            </Link>
+            <span className="text-border">|</span>
+            <Link 
+              to="/glossario" 
+              className="text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Glossário
+            </Link>
+            <span className="text-border">|</span>
+            <Link 
               to="/sobre" 
               className="text-muted-foreground hover:text-foreground transition-colors"
             >
