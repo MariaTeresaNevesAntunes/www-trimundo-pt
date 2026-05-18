@@ -16,6 +16,8 @@ const Navigation = () => {
     { path: '/limites-trigonometricos', label: 'Limites' },
     { path: '/exercicios', label: 'Exercícios' },
     { path: '/aplicacoes', label: 'Aplicações' },
+    { path: '/artigos', label: 'Artigos' },
+    { path: '/glossario', label: 'Glossário' },
   ];
 
   const isActivePath = (path: string) => location.pathname === path;
