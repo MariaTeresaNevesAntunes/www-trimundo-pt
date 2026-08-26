@@ -41,6 +41,8 @@ const Identidades = () => {
     "@type": "Article",
     "headline": "Identidades Trigonométricas Fundamentais",
     "description": "Identidades fundamentais, de quociente, recíprocas, pitagóricas, ângulo duplo, soma e diferença, e meio ângulo",
+    "author": { "@type": "Person", "name": "Maria Teresa" },
+    "image": "https://trimundo.pt/lovable-uploads/fcb8dd65-eb51-481c-9675-5c6e048617c9.png",
     "publisher": { "@type": "Organization", "name": "TriMundo", "url": "https://trimundo.pt" },
     "mainEntityOfPage": "https://trimundo.pt/identidades"
   };

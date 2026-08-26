@@ -10,6 +10,8 @@ const Historia = () => {
     "headline": "História da Trigonometria: 4000 Anos de Evolução",
     "description": "Descobre a evolução da trigonometria desde os babilónios até à era moderna, passando pelos gregos, árabes, navegadores portugueses, revolução científica e era digital.",
     "articleBody": "Uma jornada fascinante através dos milénios, desde as primeiras observações astronómicas até às aplicações modernas em inteligência artificial e exploração espacial.",
+    "author": { "@type": "Person", "name": "Maria Teresa" },
+    "image": "https://trimundo.pt/lovable-uploads/fcb8dd65-eb51-481c-9675-5c6e048617c9.png",
     "publisher": { "@type": "Organization", "name": "TriMundo", "url": "https://trimundo.pt" },
     "mainEntityOfPage": "https://trimundo.pt/historia",
     "datePublished": "2026-01-15",
