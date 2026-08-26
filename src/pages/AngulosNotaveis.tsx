@@ -79,7 +79,7 @@ const AngulosNotaveis = () => {
     tg: "∞"
   }];
   return <>
-      <SEO title="Ângulos Notáveis | TriMundo" description="Aprende os valores exatos das funções trigonométricas para os ângulos notáveis: 0°, 30°, 45°, 60° e 90°." keywords="ângulos notáveis, seno 30, cosseno 45, tangente 60, tabela trigonométrica, quadrantes" canonical="https://trimundo.pt/angulos-notaveis" structuredData={structuredData} />
+      <SEO ogType="article" title="Ângulos Notáveis | TriMundo" description="Aprende os valores exatos das funções trigonométricas para os ângulos notáveis: 0°, 30°, 45°, 60° e 90°." keywords="ângulos notáveis, seno 30, cosseno 45, tangente 60, tabela trigonométrica, quadrantes" canonical="https://trimundo.pt/angulos-notaveis" structuredData={structuredData} />
       <main className="min-h-screen bg-gradient-to-br from-background to-muted/20">
       <div className="container mx-auto px-4 py-8">
         {/* Header */}
@@ -97,6 +97,7 @@ const AngulosNotaveis = () => {
         </header>
 
         {/* Tabela de Valores Exatos */}
+        <h2 className="text-2xl font-bold text-foreground mb-4">Valores exatos das funções trigonométricas</h2>
         <div className="mb-12 animate-slide-up" style={{
         animationDelay: "0.1s"
       }}>
