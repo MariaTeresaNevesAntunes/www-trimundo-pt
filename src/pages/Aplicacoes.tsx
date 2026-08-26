@@ -10,6 +10,8 @@ const Aplicacoes = () => {
     "@type": "Article",
     "headline": "Aplicações Práticas da Trigonometria",
     "description": "Descobre como a trigonometria é aplicada em engenharia, arquitetura, navegação, física, medicina, música e videojogos",
+    "author": { "@type": "Person", "name": "Maria Teresa" },
+    "image": "https://trimundo.pt/lovable-uploads/fcb8dd65-eb51-481c-9675-5c6e048617c9.png",
     "publisher": { "@type": "Organization", "name": "TriMundo", "url": "https://trimundo.pt" },
     "mainEntityOfPage": "https://trimundo.pt/aplicacoes"
   };
@@ -142,6 +144,7 @@ const Aplicacoes = () => {
   return (
     <>
       <SEO
+        ogType="article"
         title="Aplicações Práticas da Trigonometria | TriMundo"
         description="Descobre como a trigonometria é aplicada em engenharia civil, arquitetura, navegação, astronomia, física, medicina, música e videojogos com exemplos práticos e cálculos reais."
         keywords="aplicações trigonometria, engenharia, arquitetura, navegação, astronomia, GPS, música, videojogos, computação gráfica"

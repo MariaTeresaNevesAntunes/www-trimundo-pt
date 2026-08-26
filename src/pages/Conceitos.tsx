@@ -12,6 +12,8 @@ const Conceitos = () => {
     "@type": "Article",
     "headline": "Conceitos Fundamentais de Trigonometria",
     "description": "Aprende os conceitos básicos: seno, cosseno, tangente, círculo unitário e o Teorema de Pitágoras aplicado à trigonometria",
+    "author": { "@type": "Person", "name": "Maria Teresa" },
+    "image": "https://trimundo.pt/lovable-uploads/fcb8dd65-eb51-481c-9675-5c6e048617c9.png",
     "publisher": { "@type": "Organization", "name": "TriMundo", "url": "https://trimundo.pt" },
     "mainEntityOfPage": "https://trimundo.pt/conceitos"
   };
@@ -34,7 +36,7 @@ const Conceitos = () => {
       content: (
         <div className="space-y-6">
           <div className="bg-primary/5 rounded-xl p-6 border border-primary/20">
-            <h4 className="text-xl font-semibold mb-4 text-primary">Relações Fundamentais</h4>
+            <h3 className="text-xl font-semibold mb-4 text-primary">Relações Fundamentais</h3>
             <p className="text-muted-foreground mb-4 leading-relaxed">
               Num triângulo retângulo, as razões trigonométricas descrevem a relação entre os ângulos e os comprimentos dos lados. 
               A <strong>hipotenusa</strong> é o lado maior, oposto ao ângulo reto. O <strong>cateto oposto</strong> é o lado que está 
@@ -57,7 +59,7 @@ const Conceitos = () => {
           </div>
           
           <div className="bg-accent/5 rounded-xl p-6 border border-accent/20">
-            <h4 className="text-xl font-semibold mb-3 text-accent">Mnemónica útil: SOH-CAH-TOA</h4>
+            <h3 className="text-xl font-semibold mb-3 text-accent">Mnemónica útil: SOH-CAH-TOA</h3>
             <p className="text-muted-foreground leading-relaxed mb-4">
               Uma das formas mais simples de memorizar as três razões trigonométricas é usar a sigla <strong>SOH-CAH-TOA</strong>:
             </p>
@@ -78,7 +80,7 @@ const Conceitos = () => {
           </div>
 
           <div className="bg-math-green/5 rounded-xl p-6 border border-math-green/20">
-            <h4 className="text-xl font-semibold mb-3 text-math-green">Teorema de Pitágoras e Trigonometria</h4>
+            <h3 className="text-xl font-semibold mb-3 text-math-green">Teorema de Pitágoras e Trigonometria</h3>
             <p className="text-muted-foreground leading-relaxed mb-4">
               O Teorema de Pitágoras afirma que, num triângulo retângulo, o quadrado da hipotenusa é igual à soma dos 
               quadrados dos catetos: <strong className="font-mono">a² + b² = c²</strong>. Esta relação é a base da identidade 
@@ -94,7 +96,7 @@ const Conceitos = () => {
           </div>
 
           <div className="bg-math-purple/5 rounded-xl p-6 border border-math-purple/20">
-            <h4 className="text-xl font-semibold mb-3 text-math-purple">Triângulos Especiais</h4>
+            <h3 className="text-xl font-semibold mb-3 text-math-purple">Triângulos Especiais</h3>
             <p className="text-muted-foreground leading-relaxed mb-4">
               Existem dois triângulos retângulos especiais cujas razões trigonométricas têm valores exatos muito usados em cálculos:
             </p>
@@ -126,7 +128,7 @@ const Conceitos = () => {
       content: (
         <div className="space-y-6">
           <div className="bg-math-blue/5 rounded-xl p-6 border border-math-blue/20">
-            <h4 className="text-xl font-semibold mb-4 text-math-blue">Círculo Trigonométrico</h4>
+            <h3 className="text-xl font-semibold mb-4 text-math-blue">Círculo Trigonométrico</h3>
             <p className="text-muted-foreground leading-relaxed mb-4">
               O Círculo Trigonométrico, também chamado de Ciclo ou Circunferência Trigonométrica, é uma 
               representação gráfica que auxilia no cálculo das razões trigonométricas. Trata-se de uma circunferência 
@@ -159,7 +161,7 @@ const Conceitos = () => {
           </div>
 
           <div className="bg-math-orange/5 rounded-xl p-6 border border-math-orange/20">
-            <h4 className="text-xl font-semibold mb-3 text-math-orange">Radianos vs. Graus</h4>
+            <h3 className="text-xl font-semibold mb-3 text-math-orange">Radianos vs. Graus</h3>
             <p className="text-muted-foreground leading-relaxed mb-4">
               Os ângulos podem ser medidos em <strong>graus</strong> ou em <strong>radianos</strong>. Um radiano é o ângulo 
               central cujo arco tem comprimento igual ao raio do círculo. Uma volta completa equivale a 360° ou 2π radianos.
@@ -211,7 +213,7 @@ const Conceitos = () => {
           </div>
 
           <div className="bg-primary/5 rounded-xl p-6 border border-primary/20">
-            <h4 className="text-xl font-semibold mb-3 text-primary">Ângulos Negativos e Coterminais</h4>
+            <h3 className="text-xl font-semibold mb-3 text-primary">Ângulos Negativos e Coterminais</h3>
             <p className="text-muted-foreground leading-relaxed mb-4">
               Ângulos negativos são medidos no sentido horário. Dois ângulos são <strong>coterminais</strong> se diferem 
               por um múltiplo de 360° (ou 2π rad) — partilham o mesmo ponto no círculo unitário.
@@ -230,7 +232,7 @@ const Conceitos = () => {
       content: (
         <div className="space-y-6">
           <div className="bg-math-orange/5 rounded-xl p-6 border border-math-orange/20">
-            <h4 className="text-xl font-semibold mb-4 text-math-orange">Funções Recíprocas</h4>
+            <h3 className="text-xl font-semibold mb-4 text-math-orange">Funções Recíprocas</h3>
             <p className="text-muted-foreground mb-4 leading-relaxed">
               Cada uma das três funções trigonométricas principais tem uma função recíproca correspondente. Estas funções 
               são muito utilizadas em cálculo diferencial e integral, bem como em problemas de engenharia e física.
@@ -258,7 +260,7 @@ const Conceitos = () => {
           </div>
 
           <div className="bg-primary/5 rounded-xl p-6 border border-primary/20">
-            <h4 className="text-xl font-semibold mb-4 text-primary">Relações Importantes</h4>
+            <h3 className="text-xl font-semibold mb-4 text-primary">Relações Importantes</h3>
             <p className="text-muted-foreground mb-4 leading-relaxed">
               Todas as seis funções trigonométricas estão inter-relacionadas. Conhecer uma delas (e o quadrante do ângulo) 
               permite calcular todas as outras.
@@ -284,7 +286,7 @@ const Conceitos = () => {
           </div>
 
           <div className="bg-math-blue/5 rounded-xl p-6 border border-math-blue/20">
-            <h4 className="text-xl font-semibold mb-3 text-math-blue">Domínio e Contradomínio</h4>
+            <h3 className="text-xl font-semibold mb-3 text-math-blue">Domínio e Contradomínio</h3>
             <p className="text-muted-foreground mb-4 leading-relaxed">
               Cada função trigonométrica tem restrições no seu domínio (valores de entrada) e contradomínio (valores de saída):
             </p>
@@ -310,7 +312,7 @@ const Conceitos = () => {
           </div>
 
           <div className="bg-math-green/5 rounded-xl p-6 border border-math-green/20">
-            <h4 className="text-xl font-semibold mb-3 text-math-green">Gráficos das Funções</h4>
+            <h3 className="text-xl font-semibold mb-3 text-math-green">Gráficos das Funções</h3>
             <p className="text-muted-foreground leading-relaxed mb-4">
               Os gráficos das funções trigonométricas são curvas características chamadas <strong>sinusoides</strong>. A função 
               seno forma uma onda suave que oscila entre -1 e 1, começando em 0. O cosseno é idêntico ao seno, mas deslocado 
@@ -341,7 +343,7 @@ const Conceitos = () => {
       content: (
         <div className="space-y-6">
           <div className="bg-math-blue/5 rounded-xl p-6 border border-math-blue/20">
-            <h4 className="text-xl font-semibold mb-4 text-math-blue">Lei dos Senos</h4>
+            <h3 className="text-xl font-semibold mb-4 text-math-blue">Lei dos Senos</h3>
             <p className="text-muted-foreground leading-relaxed mb-4">
               A Lei dos Senos estabelece que, em qualquer triângulo, a razão entre um lado e o seno do ângulo oposto 
               é constante. É especialmente útil quando conhecemos um par lado-ângulo oposto.
@@ -357,7 +359,7 @@ const Conceitos = () => {
           </div>
 
           <div className="bg-math-green/5 rounded-xl p-6 border border-math-green/20">
-            <h4 className="text-xl font-semibold mb-4 text-math-green">Lei dos Cossenos</h4>
+            <h3 className="text-xl font-semibold mb-4 text-math-green">Lei dos Cossenos</h3>
             <p className="text-muted-foreground leading-relaxed mb-4">
               A Lei dos Cossenos é uma generalização do Teorema de Pitágoras para triângulos não retângulos. 
               Permite calcular um lado quando se conhecem os outros dois e o ângulo entre eles, ou calcular 
@@ -377,7 +379,7 @@ const Conceitos = () => {
           </div>
 
           <div className="bg-math-purple/5 rounded-xl p-6 border border-math-purple/20">
-            <h4 className="text-xl font-semibold mb-3 text-math-purple">Exemplo Prático: Lei dos Cossenos</h4>
+            <h3 className="text-xl font-semibold mb-3 text-math-purple">Exemplo Prático: Lei dos Cossenos</h3>
             <p className="text-muted-foreground leading-relaxed mb-3">
               <strong>Problema:</strong> Num triângulo ABC, a = 7, b = 10, e o ângulo C = 60°. Calcula o lado c.
             </p>
@@ -391,7 +393,7 @@ const Conceitos = () => {
           </div>
 
           <div className="bg-math-orange/5 rounded-xl p-6 border border-math-orange/20">
-            <h4 className="text-xl font-semibold mb-3 text-math-orange">Área de um Triângulo</h4>
+            <h3 className="text-xl font-semibold mb-3 text-math-orange">Área de um Triângulo</h3>
             <p className="text-muted-foreground leading-relaxed mb-4">
               Quando conhecemos dois lados e o ângulo entre eles, podemos calcular a área do triângulo usando trigonometria:
             </p>
@@ -418,6 +420,7 @@ const Conceitos = () => {
   return (
     <>
       <SEO
+        ogType="article"
         title="Conceitos Fundamentais de Trigonometria | TriMundo"
         description="Aprende os conceitos fundamentais de trigonometria: seno, cosseno, tangente, círculo unitário, Leis dos Senos e Cossenos e relações trigonométricas."
         keywords="seno, cosseno, tangente, triângulo retângulo, círculo unitário, SOH-CAH-TOA, funções trigonométricas, lei dos senos, lei dos cossenos"

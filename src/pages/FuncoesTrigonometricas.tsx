@@ -8,6 +8,8 @@ const FuncoesTrigonometricas = () => {
     "@type": "Article",
     "headline": "Funções Trigonométricas: Seno, Cosseno, Tangente e mais",
     "description": "Estudo completo das 6 funções trigonométricas: definições, gráficos, propriedades, domínio, contradomínio, período e amplitude.",
+    "author": { "@type": "Person", "name": "Maria Teresa" },
+    "image": "https://trimundo.pt/lovable-uploads/fcb8dd65-eb51-481c-9675-5c6e048617c9.png",
     "publisher": { "@type": "Organization", "name": "TriMundo", "url": "https://trimundo.pt" },
     "mainEntityOfPage": "https://trimundo.pt/funcoes-trigonometricas",
     "datePublished": "2026-04-12"
@@ -55,6 +57,7 @@ const FuncoesTrigonometricas = () => {
   return (
     <>
       <SEO
+        ogType="article"
         title="Funções Trigonométricas: Guia Completo | TriMundo"
         description="Guia completo das 6 funções trigonométricas: seno, cosseno, tangente, cotangente, secante e cossecante. Definições, gráficos, propriedades, domínio, período e amplitude."
         keywords="funções trigonométricas, seno, cosseno, tangente, cotangente, secante, cossecante, gráfico seno, período, amplitude"
