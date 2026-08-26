@@ -50,6 +50,7 @@ const Identidades = () => {
   return (
     <>
       <SEO
+        ogType="article"
         title="Identidades Trigonométricas | TriMundo"
         description="Descobre todas as identidades trigonométricas: fundamental, pitagóricas, quociente, recíprocas, ângulo duplo, soma e diferença, meio ângulo e produto para soma."
         keywords="identidades trigonométricas, identidade pitagórica, ângulo duplo, soma e diferença, meio ângulo, fórmulas trigonometria"

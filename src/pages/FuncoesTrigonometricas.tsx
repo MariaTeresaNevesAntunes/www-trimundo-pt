@@ -57,6 +57,7 @@ const FuncoesTrigonometricas = () => {
   return (
     <>
       <SEO
+        ogType="article"
         title="Funções Trigonométricas: Guia Completo | TriMundo"
         description="Guia completo das 6 funções trigonométricas: seno, cosseno, tangente, cotangente, secante e cossecante. Definições, gráficos, propriedades, domínio, período e amplitude."
         keywords="funções trigonométricas, seno, cosseno, tangente, cotangente, secante, cossecante, gráfico seno, período, amplitude"

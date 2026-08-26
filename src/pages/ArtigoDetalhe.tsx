@@ -16,6 +16,7 @@ const ArtigoDetalhe = () => {
       "@context": "https://schema.org",
       "@type": "Article",
       headline: article.title,
+      image: "https://trimundo.pt/lovable-uploads/fcb8dd65-eb51-481c-9675-5c6e048617c9.png",
       description: article.description,
       author: { "@type": "Person", name: article.author },
       publisher: {
@@ -53,6 +54,7 @@ const ArtigoDetalhe = () => {
   return (
     <>
       <SEO
+        ogType="article"
         title={`${article.title} | TriMundo`}
         description={article.description}
         canonical={url}

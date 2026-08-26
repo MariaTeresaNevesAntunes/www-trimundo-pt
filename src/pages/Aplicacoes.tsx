@@ -144,6 +144,7 @@ const Aplicacoes = () => {
   return (
     <>
       <SEO
+        ogType="article"
         title="Aplicações Práticas da Trigonometria | TriMundo"
         description="Descobre como a trigonometria é aplicada em engenharia civil, arquitetura, navegação, astronomia, física, medicina, música e videojogos com exemplos práticos e cálculos reais."
         keywords="aplicações trigonometria, engenharia, arquitetura, navegação, astronomia, GPS, música, videojogos, computação gráfica"

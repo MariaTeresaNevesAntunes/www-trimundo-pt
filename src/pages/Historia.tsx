@@ -173,6 +173,7 @@ const Historia = () => {
   return (
     <>
       <SEO
+        ogType="article"
         title="História da Trigonometria: 4000 Anos | TriMundo"
         description="Descobre a fascinante evolução da trigonometria: dos babilónios aos gregos, dos matemáticos árabes e indianos aos navegadores portugueses, até à era digital e espacial."
         keywords="história trigonometria, babilónios, Hiparco, gregos, matemáticos árabes, indianos, navegadores portugueses, Euler, Fourier, evolução matemática"

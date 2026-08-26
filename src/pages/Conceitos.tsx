@@ -420,6 +420,7 @@ const Conceitos = () => {
   return (
     <>
       <SEO
+        ogType="article"
         title="Conceitos Fundamentais de Trigonometria | TriMundo"
         description="Aprende os conceitos fundamentais de trigonometria: seno, cosseno, tangente, círculo unitário, Leis dos Senos e Cossenos e relações trigonométricas."
         keywords="seno, cosseno, tangente, triângulo retângulo, círculo unitário, SOH-CAH-TOA, funções trigonométricas, lei dos senos, lei dos cossenos"
