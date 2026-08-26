@@ -5,19 +5,21 @@ interface SEOProps {
   description: string;
   canonical?: string;
   ogImage?: string;
+  ogType?: 'website' | 'article';
   keywords?: string;
   structuredData?: object | object[];
 }
 
 const SITE_URL = 'https://trimundo.pt';
 const SITE_NAME = 'TriMundo';
-const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.png`;
+const DEFAULT_OG_IMAGE = `${SITE_URL}/lovable-uploads/fcb8dd65-eb51-481c-9675-5c6e048617c9.png`;
 
 const SEO = ({ 
   title, 
   description, 
   canonical, 
   ogImage = DEFAULT_OG_IMAGE,
+  ogType = 'website',
   keywords,
   structuredData 
 }: SEOProps) => {
@@ -39,7 +41,7 @@ const SEO = ({
       <meta property="og:description" content={description} />
       <meta property="og:url" content={currentUrl} />
       <meta property="og:image" content={ogImage} />
-      <meta property="og:type" content="website" />
+      <meta property="og:type" content={ogType} />
       <meta property="og:locale" content="pt_PT" />
       
       {/* Twitter Card */}

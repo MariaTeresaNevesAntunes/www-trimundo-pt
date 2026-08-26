@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://trimundo.pt/sitemap.xml
+Sitemap: https://www-trimundo-pt.lovable.app/sitemap.xml
