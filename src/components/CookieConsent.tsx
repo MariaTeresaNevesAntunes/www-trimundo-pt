@@ -1,31 +1,39 @@
-import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { Cookie, X } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { Cookie, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import {
+  COOKIE_CONSENT_EVENT,
+  COOKIE_CONSENT_KEY,
+  COOKIE_SETTINGS_EVENT,
+} from "@/lib/adsense";
 
-const COOKIE_CONSENT_KEY = 'trimundo_cookie_consent';
-
-type ConsentValue = 'accepted' | 'rejected';
+type ConsentValue = "accepted" | "rejected";
 
 const CookieConsent = () => {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     const consent = localStorage.getItem(COOKIE_CONSENT_KEY);
-    if (!consent) {
-      const timer = setTimeout(() => setVisible(true), 1500);
-      return () => clearTimeout(timer);
+    const openSettings = () => setVisible(true);
+    window.addEventListener(COOKIE_SETTINGS_EVENT, openSettings);
+
+    if (consent) {
+      return () =>
+        window.removeEventListener(COOKIE_SETTINGS_EVENT, openSettings);
     }
+
+    const timer = setTimeout(() => setVisible(true), 1500);
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener(COOKIE_SETTINGS_EVENT, openSettings);
+    };
   }, []);
 
   const handleConsent = (value: ConsentValue) => {
     localStorage.setItem(COOKIE_CONSENT_KEY, value);
     setVisible(false);
-
-    if (value === 'rejected') {
-      // Disable AdSense personalization
-      (window.adsbygoogle as any).requestNonPersonalizedAds = 1;
-    }
+    window.dispatchEvent(new Event(COOKIE_CONSENT_EVENT));
   };
 
   if (!visible) return null;
@@ -39,25 +47,31 @@ const CookieConsent = () => {
           </div>
           <div className="flex-1 space-y-3">
             <h3 className="font-semibold text-foreground text-sm md:text-base">
-              🍪 Este site utiliza cookies
+              Este site utiliza cookies
             </h3>
             <p className="text-muted-foreground text-xs md:text-sm leading-relaxed">
-              Utilizamos cookies próprios e de terceiros (incluindo Google AdSense) para melhorar a tua experiência, 
-              analisar o tráfego e mostrar anúncios relevantes. Ao aceitar, consentes o uso de cookies conforme a nossa{' '}
-              <Link to="/politica-privacidade" className="text-primary underline hover:text-primary-foreground">
+              Utilizamos cookies próprios e de terceiros (incluindo Google
+              AdSense) para melhorar a tua experiência, analisar o tráfego e
+              mostrar anúncios relevantes. Ao aceitar, consentes o uso de
+              cookies conforme a nossa{" "}
+              <Link
+                to="/politica-privacidade"
+                className="text-primary underline hover:text-primary-foreground"
+              >
                 Política de Privacidade
-              </Link>.
+              </Link>
+              .
             </p>
             <div className="flex flex-wrap gap-2 pt-1">
               <Button
-                onClick={() => handleConsent('accepted')}
+                onClick={() => handleConsent("accepted")}
                 size="sm"
                 className="text-xs md:text-sm"
               >
                 Aceitar todos
               </Button>
               <Button
-                onClick={() => handleConsent('rejected')}
+                onClick={() => handleConsent("rejected")}
                 variant="outline"
                 size="sm"
                 className="text-xs md:text-sm"
@@ -67,7 +81,7 @@ const CookieConsent = () => {
             </div>
           </div>
           <button
-            onClick={() => handleConsent('rejected')}
+            onClick={() => handleConsent("rejected")}
             className="text-muted-foreground hover:text-foreground transition-colors shrink-0"
             aria-label="Fechar"
           >
